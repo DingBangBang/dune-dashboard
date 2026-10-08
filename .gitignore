@@ -1,0 +1,31 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+
+# --- Conda / virtual environments ---
+venv/
+.venv/
+env/
+*.conda
+
+# --- Secrets ---
+.env
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+
+# --- Screenshots are managed separately (uploaded to Dune / issue tracker) ---
+*.png
+*.jpg
+*.jpeg
+
+# --- Scratch data ---
+data/
+tmp/
+*.log
