@@ -185,7 +185,17 @@ conda run -n dune-dashboard python scripts/check_environment.py
 
 ### 3. Create the queries on Dune
 
-**Option A — automated (recommended).** Add your API key, then run the script:
+**Option A — manual (works on the FREE plan, recommended).**
+Open the editor at <https://dune.com/queries> → **New query**, paste each file from
+`queries/` (tip: `pbcopy < queries/01_cex_dex_ratio.sql` then `⌘V`), **Run**, then
+**Save** with the names listed in
+[`docs/dashboard_guide.md`](docs/dashboard_guide.md) §1.1. For **query 04 only**,
+add two *Text* parameters first: `token_symbol` = `PEPE`, `listing_date` = `2023-05-05`.
+👉 Full click-by-click walkthrough: **[`docs/dashboard_guide.md`](docs/dashboard_guide.md)**.
+
+**Option B — automated (requires a Dune Analyst plan).**
+The Dune Query API is not available on the free plan. If you upgrade, add your key
+and run the script:
 
 ```bash
 cp .env.example .env      # then paste your DUNE_API_KEY (Dune → Settings → API)
@@ -194,11 +204,7 @@ conda run -n dune-dashboard python scripts/create_queries.py             # creat
 ```
 
 This writes `queries/dune_query_ids.json` with the query IDs/URLs.
-(Requires a Dune **Analyst** plan for the Query API.)
 
-**Option B — manual.** Open <https://dune.com/queries/7552102>, paste each file
-from `queries/` into the editor, and **Save**. Declare the parameters for query 04
-(`token_symbol`, `listing_date`) via *Parameters*.
 
 ### 4. Build the Dashboard (UI)
 

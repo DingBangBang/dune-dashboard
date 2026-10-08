@@ -178,7 +178,15 @@ conda run -n dune-dashboard python scripts/check_environment.py
 
 ### 3. 在 Dune 上创建查询
 
-**方式 A（推荐，自动）。** 填入 API Key 后运行脚本：
+**方式 A（手动，免费版可用，推荐）。**
+打开 <https://dune.com/queries> → **New query**，把 `queries/` 下每个文件粘贴进去
+（小技巧：`pbcopy < queries/01_cex_dex_ratio.sql` 后 `⌘V`），**Run**，再按
+[`docs/dashboard_guide.md`](docs/dashboard_guide.md) §1.1 的名字 **Save**。仅查询 04 需先加两个
+*Text* 参数：`token_symbol` = `PEPE`、`listing_date` = `2023-05-05`。
+👉 完整逐步指南：**[`docs/dashboard_guide.md`](docs/dashboard_guide.md)**。
+
+**方式 B（自动，需要 Dune Analyst 套餐）。**
+免费版无法使用 Dune Query API。升级套餐后，填入 Key 再运行脚本：
 
 ```bash
 cp .env.example .env      # 粘贴 DUNE_API_KEY（Dune → Settings → API）
@@ -187,11 +195,7 @@ conda run -n dune-dashboard python scripts/create_queries.py             # 创�
 ```
 
 脚本会生成 `queries/dune_query_ids.json`（本地文件 → 查询 ID/URL 映射）。
-Query API 需要 Dune **Analyst** 及以上套餐。
 
-**方式 B（手动）。** 打开 <https://dune.com/queries/7552102>，把 `queries/` 下每个
-文件粘贴进编辑器并 **Save**；为查询 04 在 *Parameters* 面板声明
-`token_symbol` 与 `listing_date`。
 
 ### 4. 搭建仪表盘（浏览器 UI）
 

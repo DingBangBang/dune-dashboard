@@ -150,6 +150,7 @@ Newest entries at the bottom under **Changelog**.
 | Date | Change |
 | --- | --- |
 | 2026-10-09 | Initial scaffold: 10 DuneSQL queries, automation script, docs, git repo. Queries not yet published (pending API key / UI build). |
+| 2026-10-09 | Expanded `docs/dashboard_guide.md` for the **free-plan manual path**: no API required; added per-query creation steps, per-panel visualization config, time-filter/publish steps and a detailed screenshot-region guide. READMEs updated to lead with the manual path. |
 
 > **TODO after publishing:** add a row with the public dashboard URL and the date
 > the dashboard first went live, plus a screenshot link.
