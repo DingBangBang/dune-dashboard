@@ -1,0 +1,314 @@
+{
+  "days": [
+    "2026-10-02",
+    "2026-10-03",
+    "2026-10-04",
+    "2026-10-05",
+    "2026-10-06",
+    "2026-10-07",
+    "2026-10-08",
+    "2026-10-09"
+  ],
+  "daily": [
+    {
+      "exchange": "binance",
+      "day": "2026-10-02",
+      "inflow_usd": 358405447.49,
+      "outflow_usd": 0.0,
+      "net_flow_usd": 358405447.49,
+      "transfers": 25
+    },
+    {
+      "exchange": "bitfinex",
+      "day": "2026-10-02",
+      "inflow_usd": 150990453.87,
+      "outflow_usd": 125722395.01,
+      "net_flow_usd": 25268058.86,
+      "transfers": 39
+    },
+    {
+      "exchange": "bybit",
+      "day": "2026-10-02",
+      "inflow_usd": 27112466.29,
+      "outflow_usd": 0.0,
+      "net_flow_usd": 27112466.29,
+      "transfers": 2
+    },
+    {
+      "exchange": "binance",
+      "day": "2026-10-03",
+      "inflow_usd": 40926762.87,
+      "outflow_usd": 0.0,
+      "net_flow_usd": 40926762.87,
+      "transfers": 13
+    },
+    {
+      "exchange": "bitfinex",
+      "day": "2026-10-03",
+      "inflow_usd": 13647650.8,
+      "outflow_usd": 80038513.26,
+      "net_flow_usd": -66390862.46,
+      "transfers": 6
+    },
+    {
+      "exchange": "bybit",
+      "day": "2026-10-03",
+      "inflow_usd": 19926187.22,
+      "outflow_usd": 0.0,
+      "net_flow_usd": 19926187.22,
+      "transfers": 3
+    },
+    {
+      "exchange": "binance",
+      "day": "2026-10-04",
+      "inflow_usd": 123481733.34,
+      "outflow_usd": 0.0,
+      "net_flow_usd": 123481733.34,
+      "transfers": 8
+    },
+    {
+      "exchange": "bitfinex",
+      "day": "2026-10-04",
+      "inflow_usd": 285085.28,
+      "outflow_usd": 0.0,
+      "net_flow_usd": 285085.28,
+      "transfers": 1
+    },
+    {
+      "exchange": "bybit",
+      "day": "2026-10-04",
+      "inflow_usd": 29753.98,
+      "outflow_usd": 0.0,
+      "net_flow_usd": 29753.98,
+      "transfers": 1
+    },
+    {
+      "exchange": "binance",
+      "day": "2026-10-05",
+      "inflow_usd": 618091357.61,
+      "outflow_usd": 0.0,
+      "net_flow_usd": 618091357.61,
+      "transfers": 32
+    },
+    {
+      "exchange": "bitfinex",
+      "day": "2026-10-05",
+      "inflow_usd": 48604349.92,
+      "outflow_usd": 81777316.14,
+      "net_flow_usd": -33172966.22,
+      "transfers": 11
+    },
+    {
+      "exchange": "bybit",
+      "day": "2026-10-05",
+      "inflow_usd": 243703100.26,
+      "outflow_usd": 0.0,
+      "net_flow_usd": 243703100.26,
+      "transfers": 15
+    },
+    {
+      "exchange": "binance",
+      "day": "2026-10-06",
+      "inflow_usd": 237398099.01,
+      "outflow_usd": 0.0,
+      "net_flow_usd": 237398099.01,
+      "transfers": 35
+    },
+    {
+      "exchange": "bitfinex",
+      "day": "2026-10-06",
+      "inflow_usd": 31628100.47,
+      "outflow_usd": 0.0,
+      "net_flow_usd": 31628100.47,
+      "transfers": 24
+    },
+    {
+      "exchange": "bybit",
+      "day": "2026-10-06",
+      "inflow_usd": 806.81,
+      "outflow_usd": 1232722.34,
+      "net_flow_usd": -1231915.53,
+      "transfers": 368
+    },
+    {
+      "exchange": "binance",
+      "day": "2026-10-07",
+      "inflow_usd": 498325664.93,
+      "outflow_usd": 0.0,
+      "net_flow_usd": 498325664.93,
+      "transfers": 18
+    },
+    {
+      "exchange": "bitfinex",
+      "day": "2026-10-07",
+      "inflow_usd": 403165954.02,
+      "outflow_usd": 0.0,
+      "net_flow_usd": 403165954.02,
+      "transfers": 196
+    },
+    {
+      "exchange": "bybit",
+      "day": "2026-10-07",
+      "inflow_usd": 42889148.24,
+      "outflow_usd": 51523939.84,
+      "net_flow_usd": -8634791.6,
+      "transfers": 2273
+    },
+    {
+      "exchange": "binance",
+      "day": "2026-10-08",
+      "inflow_usd": 605647760.77,
+      "outflow_usd": 823096131.02,
+      "net_flow_usd": -217448370.25,
+      "transfers": 11712
+    },
+    {
+      "exchange": "bitfinex",
+      "day": "2026-10-08",
+      "inflow_usd": 195521657.57,
+      "outflow_usd": 211932655.51,
+      "net_flow_usd": -16410997.94,
+      "transfers": 57
+    },
+    {
+      "exchange": "bybit",
+      "day": "2026-10-08",
+      "inflow_usd": 38677897.53,
+      "outflow_usd": 27591062.0,
+      "net_flow_usd": 11086835.53,
+      "transfers": 1672
+    },
+    {
+      "exchange": "binance",
+      "day": "2026-10-09",
+      "inflow_usd": 78245488.99,
+      "outflow_usd": 124714372.0,
+      "net_flow_usd": -46468883.01,
+      "transfers": 2295
+    },
+    {
+      "exchange": "bybit",
+      "day": "2026-10-09",
+      "inflow_usd": 0.0,
+      "outflow_usd": 399244.76,
+      "net_flow_usd": -399244.76,
+      "transfers": 69
+    }
+  ],
+  "exchanges": [
+    {
+      "exchange": "binance",
+      "inflow_usd": 2560522315.01,
+      "outflow_usd": 947810503.02,
+      "net_flow_usd": 1612711811.99,
+      "transfers": 14138
+    },
+    {
+      "exchange": "bitfinex",
+      "inflow_usd": 843843251.93,
+      "outflow_usd": 499470879.92,
+      "net_flow_usd": 344372372.01,
+      "transfers": 334
+    },
+    {
+      "exchange": "bybit",
+      "inflow_usd": 372339360.33,
+      "outflow_usd": 80746968.94,
+      "net_flow_usd": 291592391.39,
+      "transfers": 4403
+    }
+  ],
+  "assets": [
+    {
+      "asset": "ETH",
+      "inflow_usd": 1865621551.38,
+      "outflow_usd": 1007690627.12,
+      "net_flow_usd": 857930924.26,
+      "amount": 1086152.434
+    },
+    {
+      "asset": "USDT",
+      "inflow_usd": 1888603454.62,
+      "outflow_usd": 502826760.74,
+      "net_flow_usd": 1385776693.88,
+      "amount": 2391430215.4568
+    },
+    {
+      "asset": "USDC",
+      "inflow_usd": 22479916.27,
+      "outflow_usd": 17510558.88,
+      "net_flow_usd": 4969357.39,
+      "amount": 39990475.1551
+    },
+    {
+      "asset": "WETH",
+      "inflow_usd": 0.0,
+      "outflow_usd": 405.14,
+      "net_flow_usd": -405.14,
+      "amount": 0.1574
+    },
+    {
+      "asset": "DAI",
+      "inflow_usd": 5.0,
+      "outflow_usd": 0.0,
+      "net_flow_usd": 5.0,
+      "amount": 5.0
+    }
+  ],
+  "totals": {
+    "inflow": 3776704927.27,
+    "outflow": 1528028351.88,
+    "net": 2248676575.39
+  },
+  "n_transfers": 18875,
+  "window_days": 7,
+  "pending": [
+    [
+      "01",
+      "CEX vs DEX Daily Volume &amp; Ratio",
+      "Needs DEX trade volume (curated dex.trades)."
+    ],
+    [
+      "03",
+      "DEX Aggregator Market Share",
+      "Needs dex_aggregator.trades (decoded aggregator routes)."
+    ],
+    [
+      "04",
+      "Token CEX-Listing Impact (\u00b17d)",
+      "Needs per-token DEX swap history."
+    ],
+    [
+      "05",
+      "Unique Traders per Protocol",
+      "Needs decoded DEX swaps keyed by tx_from."
+    ],
+    [
+      "07",
+      "DEX Volume by Blockchain",
+      "Needs multi-chain DEX trades."
+    ],
+    [
+      "08",
+      "Top Token Pairs (30d)",
+      "Needs decoded DEX swaps with token symbols."
+    ],
+    [
+      "09",
+      "Stablecoin Share of DEX Volume",
+      "Needs DEX swap volume by leg."
+    ],
+    [
+      "10",
+      "Trade Size Distribution",
+      "Needs per-swap USD size."
+    ]
+  ],
+  "meta": {
+    "source": "Alchemy Transfers + Prices API (Ethereum mainnet)",
+    "kind": "realtime",
+    "window_days": 7,
+    "generated": "2026-10-09 01:57 UTC",
+    "api_calls": 48
+  }
+}

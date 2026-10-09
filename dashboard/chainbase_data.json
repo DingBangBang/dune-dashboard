@@ -1,0 +1,2489 @@
+{
+  "source": "Chainbase Data Cloud (ethereum.onchain_trades / bsc.onchain_trades)",
+  "snapshot_end": "2025-04-25",
+  "window_start": "2025-03-25",
+  "generated": "2026-10-09 01:40 UTC",
+  "queries": {
+    "01": {
+      "id": "01",
+      "file": "01_cex_dex_ratio.sql",
+      "title": "CEX vs DEX daily volume & ratio",
+      "status": "ok",
+      "columns": [
+        "day",
+        "dex_volume_usd",
+        "cex_volume_usd",
+        "cex_dex_ratio"
+      ],
+      "rows": [
+        {
+          "day": "2025-04-18",
+          "dex_volume_usd": "119188425.10",
+          "cex_volume_usd": "2411814838.29",
+          "cex_dex_ratio": null
+        },
+        {
+          "day": "2025-04-05",
+          "dex_volume_usd": "61685027.74",
+          "cex_volume_usd": "944547814.87",
+          "cex_dex_ratio": null
+        },
+        {
+          "day": "2025-04-08",
+          "dex_volume_usd": "64549175.48",
+          "cex_volume_usd": "4917372654.67",
+          "cex_dex_ratio": null
+        },
+        {
+          "day": "2025-04-21",
+          "dex_volume_usd": "106884362.07",
+          "cex_volume_usd": "4890840197.88",
+          "cex_dex_ratio": null
+        },
+        {
+          "day": "2025-04-04",
+          "dex_volume_usd": "70295821.32",
+          "cex_volume_usd": "3728877673.16",
+          "cex_dex_ratio": null
+        },
+        {
+          "day": "2025-04-24",
+          "dex_volume_usd": "61060017.55",
+          "cex_volume_usd": "3758010428.76",
+          "cex_dex_ratio": null
+        },
+        {
+          "day": "2025-04-02",
+          "dex_volume_usd": "53644719.10",
+          "cex_volume_usd": "3642608670.92",
+          "cex_dex_ratio": null
+        },
+        {
+          "day": "2025-04-20",
+          "dex_volume_usd": "101178523.70",
+          "cex_volume_usd": "1046921326.88",
+          "cex_dex_ratio": null
+        },
+        {
+          "day": "2025-04-03",
+          "dex_volume_usd": "57380260.65",
+          "cex_volume_usd": "3525722513.37",
+          "cex_dex_ratio": null
+        },
+        {
+          "day": "2025-04-19",
+          "dex_volume_usd": "119865793.40",
+          "cex_volume_usd": "1121656525.15",
+          "cex_dex_ratio": null
+        },
+        {
+          "day": "2025-04-11",
+          "dex_volume_usd": "32787791.75",
+          "cex_volume_usd": "2017259041.83",
+          "cex_dex_ratio": null
+        },
+        {
+          "day": "2025-04-09",
+          "dex_volume_usd": "75660423.88",
+          "cex_volume_usd": "5011079559.35",
+          "cex_dex_ratio": null
+        },
+        {
+          "day": "2025-04-22",
+          "dex_volume_usd": "199207745.11",
+          "cex_volume_usd": "8609806018.75",
+          "cex_dex_ratio": null
+        },
+        {
+          "day": "2025-04-10",
+          "dex_volume_usd": "82999198.38",
+          "cex_volume_usd": "3844587348.96",
+          "cex_dex_ratio": null
+        },
+        {
+          "day": "2025-04-23",
+          "dex_volume_usd": "107471404.70",
+          "cex_volume_usd": "5970888292.39",
+          "cex_dex_ratio": null
+        },
+        {
+          "day": "2025-04-07",
+          "dex_volume_usd": "83612308.25",
+          "cex_volume_usd": "6524275841.42",
+          "cex_dex_ratio": null
+        },
+        {
+          "day": "2025-04-16",
+          "dex_volume_usd": "84744944.82",
+          "cex_volume_usd": "2574475638.37",
+          "cex_dex_ratio": null
+        },
+        {
+          "day": "2025-04-06",
+          "dex_volume_usd": "102617059.44",
+          "cex_volume_usd": "1563728637.87",
+          "cex_dex_ratio": null
+        },
+        {
+          "day": "2025-04-17",
+          "dex_volume_usd": "124953895.11",
+          "cex_volume_usd": "3368476335.97",
+          "cex_dex_ratio": null
+        },
+        {
+          "day": "2025-04-01",
+          "dex_volume_usd": "52199445.55",
+          "cex_volume_usd": "2702245884.56",
+          "cex_dex_ratio": null
+        },
+        {
+          "day": "2025-03-31",
+          "dex_volume_usd": "19562172.09",
+          "cex_volume_usd": "1534026375.33",
+          "cex_dex_ratio": null
+        }
+      ],
+      "row_count": 21
+    },
+    "02": {
+      "id": "02",
+      "file": "02_exchange_net_flow.sql",
+      "title": "Exchange net flow (daily)",
+      "status": "ok",
+      "columns": [
+        "exchange_name",
+        "day",
+        "inflow_usd",
+        "outflow_usd",
+        "net_flow_usd"
+      ],
+      "rows": [
+        {
+          "exchange_name": "binance",
+          "day": "2025-04-06",
+          "inflow_usd": "637474967.46",
+          "outflow_usd": "737011115.33",
+          "net_flow_usd": "-99536147.87"
+        },
+        {
+          "exchange_name": "binance",
+          "day": "2025-04-24",
+          "inflow_usd": "1846935319.32",
+          "outflow_usd": "1588054183.65",
+          "net_flow_usd": "258881135.66"
+        },
+        {
+          "exchange_name": "binance",
+          "day": "2025-04-21",
+          "inflow_usd": "3257923656.70",
+          "outflow_usd": "1404626260.28",
+          "net_flow_usd": "1853297396.42"
+        },
+        {
+          "exchange_name": "binance",
+          "day": "2025-04-02",
+          "inflow_usd": "2074018568.97",
+          "outflow_usd": "1338327152.18",
+          "net_flow_usd": "735691416.80"
+        },
+        {
+          "exchange_name": "binance",
+          "day": "2025-04-22",
+          "inflow_usd": "4769401067.93",
+          "outflow_usd": "2962217250.05",
+          "net_flow_usd": "1807183817.88"
+        },
+        {
+          "exchange_name": "bybit",
+          "day": "2025-03-31",
+          "inflow_usd": "51215531.57",
+          "outflow_usd": "39590222.30",
+          "net_flow_usd": "11625309.26"
+        },
+        {
+          "exchange_name": "binance",
+          "day": "2025-04-10",
+          "inflow_usd": "2388908440.86",
+          "outflow_usd": "1165657829.09",
+          "net_flow_usd": "1223250611.77"
+        },
+        {
+          "exchange_name": "binance",
+          "day": "2025-04-20",
+          "inflow_usd": "505202991.71",
+          "outflow_usd": "442258078.83",
+          "net_flow_usd": "62944912.87"
+        },
+        {
+          "exchange_name": "okx",
+          "day": "2025-04-07",
+          "inflow_usd": "0.89",
+          "outflow_usd": "0.89",
+          "net_flow_usd": "0.00"
+        },
+        {
+          "exchange_name": "bitfinex",
+          "day": "2025-04-17",
+          "inflow_usd": "16072067.96",
+          "outflow_usd": "0.00",
+          "net_flow_usd": "16072067.96"
+        },
+        {
+          "exchange_name": "bybit",
+          "day": "2025-04-08",
+          "inflow_usd": "103269483.55",
+          "outflow_usd": "115764337.28",
+          "net_flow_usd": "-12494853.73"
+        },
+        {
+          "exchange_name": "bybit",
+          "day": "2025-04-07",
+          "inflow_usd": "354808922.32",
+          "outflow_usd": "242519255.99",
+          "net_flow_usd": "112289666.33"
+        },
+        {
+          "exchange_name": "bybit",
+          "day": "2025-04-09",
+          "inflow_usd": "205280374.83",
+          "outflow_usd": "156640147.87",
+          "net_flow_usd": "48640226.96"
+        },
+        {
+          "exchange_name": "binance",
+          "day": "2025-03-31",
+          "inflow_usd": "738766840.97",
+          "outflow_usd": "704407419.12",
+          "net_flow_usd": "34359421.86"
+        },
+        {
+          "exchange_name": "bitfinex",
+          "day": "2025-04-10",
+          "inflow_usd": "387265.01",
+          "outflow_usd": "0.00",
+          "net_flow_usd": "387265.01"
+        },
+        {
+          "exchange_name": "bitfinex",
+          "day": "2025-04-20",
+          "inflow_usd": "1129283.11",
+          "outflow_usd": "0.00",
+          "net_flow_usd": "1129283.11"
+        },
+        {
+          "exchange_name": "bybit",
+          "day": "2025-04-16",
+          "inflow_usd": "90277612.03",
+          "outflow_usd": "86945131.40",
+          "net_flow_usd": "3332480.63"
+        },
+        {
+          "exchange_name": "bybit",
+          "day": "2025-04-19",
+          "inflow_usd": "47771194.73",
+          "outflow_usd": "68294531.81",
+          "net_flow_usd": "-20523337.08"
+        },
+        {
+          "exchange_name": "okx",
+          "day": "2025-04-17",
+          "inflow_usd": "0.01",
+          "outflow_usd": "0.00",
+          "net_flow_usd": "0.01"
+        },
+        {
+          "exchange_name": "bitfinex",
+          "day": "2025-04-07",
+          "inflow_usd": "0.00",
+          "outflow_usd": "0.00",
+          "net_flow_usd": "0.00"
+        },
+        {
+          "exchange_name": "bitfinex",
+          "day": "2025-04-03",
+          "inflow_usd": "8208.51",
+          "outflow_usd": "0.00",
+          "net_flow_usd": "8208.51"
+        },
+        {
+          "exchange_name": "bitfinex",
+          "day": "2025-04-01",
+          "inflow_usd": "1336.17",
+          "outflow_usd": "0.00",
+          "net_flow_usd": "1336.17"
+        },
+        {
+          "exchange_name": "okx",
+          "day": "2025-04-10",
+          "inflow_usd": "197684.97",
+          "outflow_usd": "0.00",
+          "net_flow_usd": "197684.97"
+        },
+        {
+          "exchange_name": "bybit",
+          "day": "2025-04-04",
+          "inflow_usd": "109683147.23",
+          "outflow_usd": "114218227.99",
+          "net_flow_usd": "-4535080.76"
+        },
+        {
+          "exchange_name": "okx",
+          "day": "2025-04-16",
+          "inflow_usd": "0.00",
+          "outflow_usd": "0.00",
+          "net_flow_usd": "0.00"
+        },
+        {
+          "exchange_name": "bybit",
+          "day": "2025-04-10",
+          "inflow_usd": "123125767.15",
+          "outflow_usd": "166310361.89",
+          "net_flow_usd": "-43184594.74"
+        },
+        {
+          "exchange_name": "bitfinex",
+          "day": "2025-04-23",
+          "inflow_usd": "26844824.64",
+          "outflow_usd": "76767844.05",
+          "net_flow_usd": "-49923019.41"
+        },
+        {
+          "exchange_name": "binance",
+          "day": "2025-04-23",
+          "inflow_usd": "3259080862.77",
+          "outflow_usd": "1984545846.61",
+          "net_flow_usd": "1274535016.16"
+        },
+        {
+          "exchange_name": "bybit",
+          "day": "2025-04-23",
+          "inflow_usd": "247033394.48",
+          "outflow_usd": "376615519.84",
+          "net_flow_usd": "-129582125.36"
+        },
+        {
+          "exchange_name": "bybit",
+          "day": "2025-04-02",
+          "inflow_usd": "115847546.25",
+          "outflow_usd": "114415403.52",
+          "net_flow_usd": "1432142.72"
+        },
+        {
+          "exchange_name": "bybit",
+          "day": "2025-04-06",
+          "inflow_usd": "97180355.39",
+          "outflow_usd": "72068399.68",
+          "net_flow_usd": "25111955.71"
+        },
+        {
+          "exchange_name": "binance",
+          "day": "2025-04-09",
+          "inflow_usd": "2946419895.05",
+          "outflow_usd": "1702739141.59",
+          "net_flow_usd": "1243680753.47"
+        },
+        {
+          "exchange_name": "bitfinex",
+          "day": "2025-04-04",
+          "inflow_usd": "6241.48",
+          "outflow_usd": "0.00",
+          "net_flow_usd": "6241.48"
+        },
+        {
+          "exchange_name": "binance",
+          "day": "2025-04-18",
+          "inflow_usd": "1538468156.91",
+          "outflow_usd": "679880437.26",
+          "net_flow_usd": "858587719.65"
+        },
+        {
+          "exchange_name": "binance",
+          "day": "2025-04-17",
+          "inflow_usd": "1932819107.23",
+          "outflow_usd": "1199972026.55",
+          "net_flow_usd": "732847080.68"
+        },
+        {
+          "exchange_name": "bybit",
+          "day": "2025-04-24",
+          "inflow_usd": "106392227.63",
+          "outflow_usd": "216628698.16",
+          "net_flow_usd": "-110236470.53"
+        },
+        {
+          "exchange_name": "bybit",
+          "day": "2025-04-01",
+          "inflow_usd": "128520252.63",
+          "outflow_usd": "109312268.97",
+          "net_flow_usd": "19207983.66"
+        },
+        {
+          "exchange_name": "bitfinex",
+          "day": "2025-04-02",
+          "inflow_usd": "0.00",
+          "outflow_usd": "0.00",
+          "net_flow_usd": "0.00"
+        },
+        {
+          "exchange_name": "okx",
+          "day": "2025-04-22",
+          "inflow_usd": "539.61",
+          "outflow_usd": "0.00",
+          "net_flow_usd": "539.61"
+        },
+        {
+          "exchange_name": "bitfinex",
+          "day": "2025-04-18",
+          "inflow_usd": "34972560.33",
+          "outflow_usd": "0.00",
+          "net_flow_usd": "34972560.33"
+        },
+        {
+          "exchange_name": "bybit",
+          "day": "2025-04-05",
+          "inflow_usd": "52393924.64",
+          "outflow_usd": "41972301.35",
+          "net_flow_usd": "10421623.29"
+        },
+        {
+          "exchange_name": "binance",
+          "day": "2025-04-08",
+          "inflow_usd": "3030898955.10",
+          "outflow_usd": "1667439878.74",
+          "net_flow_usd": "1363459076.36"
+        },
+        {
+          "exchange_name": "bitfinex",
+          "day": "2025-04-22",
+          "inflow_usd": "3449845.91",
+          "outflow_usd": "0.00",
+          "net_flow_usd": "3449845.91"
+        },
+        {
+          "exchange_name": "binance",
+          "day": "2025-04-16",
+          "inflow_usd": "1537904177.58",
+          "outflow_usd": "847256501.81",
+          "net_flow_usd": "690647675.77"
+        },
+        {
+          "exchange_name": "binance",
+          "day": "2025-04-03",
+          "inflow_usd": "1912130751.95",
+          "outflow_usd": "1309867813.97",
+          "net_flow_usd": "602262937.98"
+        },
+        {
+          "exchange_name": "coinbase",
+          "day": "2025-04-18",
+          "inflow_usd": "45.45",
+          "outflow_usd": "0.00",
+          "net_flow_usd": "45.45"
+        },
+        {
+          "exchange_name": "binance",
+          "day": "2025-04-19",
+          "inflow_usd": "534207081.31",
+          "outflow_usd": "470165645.85",
+          "net_flow_usd": "64041435.46"
+        },
+        {
+          "exchange_name": "bitfinex",
+          "day": "2025-03-31",
+          "inflow_usd": "46361.37",
+          "outflow_usd": "0.00",
+          "net_flow_usd": "46361.37"
+        },
+        {
+          "exchange_name": "bitfinex",
+          "day": "2025-04-05",
+          "inflow_usd": "0.00",
+          "outflow_usd": "0.00",
+          "net_flow_usd": "0.00"
+        },
+        {
+          "exchange_name": "bybit",
+          "day": "2025-04-18",
+          "inflow_usd": "83436644.80",
+          "outflow_usd": "75056993.53",
+          "net_flow_usd": "8379651.26"
+        },
+        {
+          "exchange_name": "binance",
+          "day": "2025-04-01",
+          "inflow_usd": "1319178657.92",
+          "outflow_usd": "1145233368.86",
+          "net_flow_usd": "173945289.06"
+        },
+        {
+          "exchange_name": "binance",
+          "day": "2025-04-07",
+          "inflow_usd": "3859282115.58",
+          "outflow_usd": "2067665545.74",
+          "net_flow_usd": "1791616569.84"
+        },
+        {
+          "exchange_name": "okx",
+          "day": "2025-04-20",
+          "inflow_usd": "155142.97",
+          "outflow_usd": "155142.97",
+          "net_flow_usd": "0.00"
+        },
+        {
+          "exchange_name": "bybit",
+          "day": "2025-04-11",
+          "inflow_usd": "55171949.94",
+          "outflow_usd": "46687220.74",
+          "net_flow_usd": "8484729.20"
+        },
+        {
+          "exchange_name": "bitfinex",
+          "day": "2025-04-19",
+          "inflow_usd": "1218071.45",
+          "outflow_usd": "0.00",
+          "net_flow_usd": "1218071.45"
+        },
+        {
+          "exchange_name": "binance",
+          "day": "2025-04-04",
+          "inflow_usd": "2109190082.29",
+          "outflow_usd": "1395779974.16",
+          "net_flow_usd": "713410108.13"
+        },
+        {
+          "exchange_name": "bybit",
+          "day": "2025-04-20",
+          "inflow_usd": "57443940.71",
+          "outflow_usd": "40576746.58",
+          "net_flow_usd": "16867194.13"
+        },
+        {
+          "exchange_name": "bybit",
+          "day": "2025-04-03",
+          "inflow_usd": "145287092.52",
+          "outflow_usd": "158428646.42",
+          "net_flow_usd": "-13141553.89"
+        },
+        {
+          "exchange_name": "bybit",
+          "day": "2025-04-17",
+          "inflow_usd": "118172141.20",
+          "outflow_usd": "101440993.02",
+          "net_flow_usd": "16731148.18"
+        },
+        {
+          "exchange_name": "bitfinex",
+          "day": "2025-04-16",
+          "inflow_usd": "2037790.85",
+          "outflow_usd": "10054424.70",
+          "net_flow_usd": "-8016633.85"
+        },
+        {
+          "exchange_name": "bybit",
+          "day": "2025-04-22",
+          "inflow_usd": "207924202.87",
+          "outflow_usd": "666813112.39",
+          "net_flow_usd": "-458888909.52"
+        },
+        {
+          "exchange_name": "bitfinex",
+          "day": "2025-04-11",
+          "inflow_usd": "1042.78",
+          "outflow_usd": "0.00",
+          "net_flow_usd": "1042.78"
+        },
+        {
+          "exchange_name": "bitfinex",
+          "day": "2025-04-21",
+          "inflow_usd": "8197966.48",
+          "outflow_usd": "0.00",
+          "net_flow_usd": "8197966.48"
+        },
+        {
+          "exchange_name": "binance",
+          "day": "2025-04-05",
+          "inflow_usd": "446478371.87",
+          "outflow_usd": "403703217.00",
+          "net_flow_usd": "42775154.87"
+        },
+        {
+          "exchange_name": "bybit",
+          "day": "2025-04-21",
+          "inflow_usd": "126308701.67",
+          "outflow_usd": "93432791.40",
+          "net_flow_usd": "32875910.27"
+        },
+        {
+          "exchange_name": "binance",
+          "day": "2025-04-11",
+          "inflow_usd": "1333591448.37",
+          "outflow_usd": "581807380.00",
+          "net_flow_usd": "751784068.37"
+        },
+        {
+          "exchange_name": "okx",
+          "day": "2025-04-21",
+          "inflow_usd": "175410.68",
+          "outflow_usd": "175410.68",
+          "net_flow_usd": "0.00"
+        },
+        {
+          "exchange_name": "bitfinex",
+          "day": "2025-04-06",
+          "inflow_usd": "9996900.00",
+          "outflow_usd": "9996900.00",
+          "net_flow_usd": "0.00"
+        }
+      ],
+      "row_count": 68
+    },
+    "03": {
+      "id": "03",
+      "file": "03_aggregator_market_share.sql",
+      "title": "DEX aggregator market share (monthly)",
+      "status": "ok",
+      "columns": [
+        "month",
+        "project",
+        "volume_usd",
+        "transfers",
+        "market_share_pct"
+      ],
+      "rows": [
+        {
+          "month": "2025-04",
+          "project": "1inch",
+          "volume_usd": "1104541848.14",
+          "transfers": 472806,
+          "market_share_pct": null
+        },
+        {
+          "month": "2025-04",
+          "project": "0x",
+          "volume_usd": "107017971.04",
+          "transfers": 31236,
+          "market_share_pct": null
+        },
+        {
+          "month": "2025-04",
+          "project": "paraswap",
+          "volume_usd": "2146070646.50",
+          "transfers": 168880,
+          "market_share_pct": null
+        },
+        {
+          "month": "2025-04",
+          "project": "cowswap",
+          "volume_usd": "16579302166.86",
+          "transfers": 424329,
+          "market_share_pct": null
+        },
+        {
+          "month": "2025-03",
+          "project": "paraswap",
+          "volume_usd": "5879621830.39",
+          "transfers": 777883,
+          "market_share_pct": null
+        },
+        {
+          "month": "2025-03",
+          "project": "0x",
+          "volume_usd": "439622931.61",
+          "transfers": 203819,
+          "market_share_pct": null
+        },
+        {
+          "month": "2025-03",
+          "project": "cowswap",
+          "volume_usd": "63553414060.42",
+          "transfers": 2128171,
+          "market_share_pct": null
+        },
+        {
+          "month": "2025-03",
+          "project": "1inch",
+          "volume_usd": "1551283530.37",
+          "transfers": 1469796,
+          "market_share_pct": null
+        }
+      ],
+      "row_count": 8
+    },
+    "04": {
+      "id": "04",
+      "file": "04_token_listing_impact.sql",
+      "title": "Token listing impact (\u00b17d)",
+      "status": "ok",
+      "columns": [
+        "day",
+        "symbol",
+        "day_offset",
+        "usd_volume",
+        "transfers"
+      ],
+      "rows": [
+        {
+          "day": "2025-04-17",
+          "symbol": "PEPE",
+          "day_offset": 2,
+          "usd_volume": "1.20",
+          "transfers": 4
+        }
+      ],
+      "row_count": 1
+    },
+    "05": {
+      "id": "05",
+      "file": "05_unique_traders.sql",
+      "title": "Unique senders / activity (daily)",
+      "status": "ok",
+      "columns": [
+        "day",
+        "unique_senders",
+        "transfers",
+        "volume_usd",
+        "transfers_per_sender"
+      ],
+      "rows": [
+        {
+          "day": "2025-04-17",
+          "unique_senders": 361162,
+          "transfers": 1948139,
+          "volume_usd": "68587004976.63",
+          "transfers_per_sender": 5.39
+        },
+        {
+          "day": "2025-04-01",
+          "unique_senders": 378416,
+          "transfers": 2060508,
+          "volume_usd": "67538182964.77",
+          "transfers_per_sender": 5.45
+        },
+        {
+          "day": "2025-04-06",
+          "unique_senders": 344943,
+          "transfers": 1977894,
+          "volume_usd": "46460051677.59",
+          "transfers_per_sender": 5.73
+        },
+        {
+          "day": "2025-04-04",
+          "unique_senders": 373991,
+          "transfers": 2132095,
+          "volume_usd": "478553548017.77",
+          "transfers_per_sender": 5.7
+        },
+        {
+          "day": "2025-04-24",
+          "unique_senders": 278604,
+          "transfers": 1442382,
+          "volume_usd": "43823502519.55",
+          "transfers_per_sender": 5.18
+        },
+        {
+          "day": "2025-04-09",
+          "unique_senders": 161556,
+          "transfers": 1164436,
+          "volume_usd": "100123430786.10",
+          "transfers_per_sender": 7.21
+        },
+        {
+          "day": "2025-04-05",
+          "unique_senders": 341009,
+          "transfers": 1788625,
+          "volume_usd": "38116581074.06",
+          "transfers_per_sender": 5.25
+        },
+        {
+          "day": "2025-04-21",
+          "unique_senders": 363436,
+          "transfers": 2136832,
+          "volume_usd": "78464392858.52",
+          "transfers_per_sender": 5.88
+        },
+        {
+          "day": "2025-04-02",
+          "unique_senders": 381573,
+          "transfers": 2136906,
+          "volume_usd": "72082239669.48",
+          "transfers_per_sender": 5.6
+        },
+        {
+          "day": "2025-04-08",
+          "unique_senders": 247884,
+          "transfers": 1426458,
+          "volume_usd": "72057139852.45",
+          "transfers_per_sender": 5.75
+        },
+        {
+          "day": "2025-04-20",
+          "unique_senders": 327886,
+          "transfers": 1767349,
+          "volume_usd": "46692123412.59",
+          "transfers_per_sender": 5.39
+        },
+        {
+          "day": "2025-04-22",
+          "unique_senders": 379192,
+          "transfers": 2217404,
+          "volume_usd": "96995789780.59",
+          "transfers_per_sender": 5.85
+        },
+        {
+          "day": "2025-04-16",
+          "unique_senders": 260899,
+          "transfers": 1388887,
+          "volume_usd": "42370687941.21",
+          "transfers_per_sender": 5.32
+        },
+        {
+          "day": "2025-04-07",
+          "unique_senders": 537622,
+          "transfers": 2491798,
+          "volume_usd": "97545435345.87",
+          "transfers_per_sender": 4.63
+        },
+        {
+          "day": "2025-04-23",
+          "unique_senders": 410670,
+          "transfers": 2306536,
+          "volume_usd": "82729088102.63",
+          "transfers_per_sender": 5.62
+        },
+        {
+          "day": "2025-04-10",
+          "unique_senders": 175358,
+          "transfers": 1143002,
+          "volume_usd": "67585070185.34",
+          "transfers_per_sender": 6.52
+        },
+        {
+          "day": "2025-03-31",
+          "unique_senders": 215428,
+          "transfers": 1040292,
+          "volume_usd": "136230257566.47",
+          "transfers_per_sender": 4.83
+        },
+        {
+          "day": "2025-04-19",
+          "unique_senders": 374794,
+          "transfers": 1966724,
+          "volume_usd": "29325829413.58",
+          "transfers_per_sender": 5.25
+        },
+        {
+          "day": "2025-04-03",
+          "unique_senders": 435779,
+          "transfers": 2191247,
+          "volume_usd": "69717442635.55",
+          "transfers_per_sender": 5.03
+        },
+        {
+          "day": "2025-04-11",
+          "unique_senders": 66666,
+          "transfers": 442316,
+          "volume_usd": "36648500415.20",
+          "transfers_per_sender": 6.63
+        },
+        {
+          "day": "2025-04-18",
+          "unique_senders": 340181,
+          "transfers": 1854929,
+          "volume_usd": "656367229464.13",
+          "transfers_per_sender": 5.45
+        }
+      ],
+      "row_count": 21
+    },
+    "06": {
+      "id": "06",
+      "file": "06_cex_flow_by_exchange.sql",
+      "title": "CEX inflow/outflow by exchange",
+      "status": "ok",
+      "columns": [
+        "exchange_name",
+        "inflow_usd",
+        "outflow_usd",
+        "net_flow_usd",
+        "total_volume_usd",
+        "transfers"
+      ],
+      "rows": [
+        {
+          "exchange_name": "okx",
+          "inflow_usd": "528779.13",
+          "outflow_usd": "330554.54",
+          "net_flow_usd": "198224.59",
+          "total_volume_usd": "859333.67",
+          "transfers": 13
+        },
+        {
+          "exchange_name": "bybit",
+          "inflow_usd": "2626544408.14",
+          "outflow_usd": "3103731312.14",
+          "net_flow_usd": "-477186904.00",
+          "total_volume_usd": "5730275720.27",
+          "transfers": 217820
+        },
+        {
+          "exchange_name": "binance",
+          "inflow_usd": "41978281517.87",
+          "outflow_usd": "25798616066.67",
+          "net_flow_usd": "16179665451.21",
+          "total_volume_usd": "67776897584.54",
+          "transfers": 636678
+        },
+        {
+          "exchange_name": "bitfinex",
+          "inflow_usd": "104369766.05",
+          "outflow_usd": "96819168.75",
+          "net_flow_usd": "7550597.30",
+          "total_volume_usd": "201188934.80",
+          "transfers": 247
+        },
+        {
+          "exchange_name": "coinbase",
+          "inflow_usd": "45.45",
+          "outflow_usd": "0.00",
+          "net_flow_usd": "45.45",
+          "total_volume_usd": "45.45",
+          "transfers": 1
+        }
+      ],
+      "row_count": 5
+    },
+    "07": {
+      "id": "07",
+      "file": "07_dex_volume_by_chain.sql",
+      "title": "DEX-routed volume by chain",
+      "status": "ok",
+      "columns": [
+        "chain",
+        "day",
+        "volume_usd",
+        "transfers"
+      ],
+      "rows": [
+        {
+          "chain": "ethereum",
+          "day": "2025-04-08",
+          "volume_usd": "64549175.48",
+          "transfers": 38688
+        },
+        {
+          "chain": "ethereum",
+          "day": "2025-04-05",
+          "volume_usd": "61685027.74",
+          "transfers": 79330
+        },
+        {
+          "chain": "ethereum",
+          "day": "2025-04-22",
+          "volume_usd": "199207745.11",
+          "transfers": 93786
+        },
+        {
+          "chain": "ethereum",
+          "day": "2025-04-16",
+          "volume_usd": "84744944.82",
+          "transfers": 62648
+        },
+        {
+          "chain": "ethereum",
+          "day": "2025-04-19",
+          "volume_usd": "119865793.40",
+          "transfers": 86256
+        },
+        {
+          "chain": "ethereum",
+          "day": "2025-04-17",
+          "volume_usd": "124953895.11",
+          "transfers": 86194
+        },
+        {
+          "chain": "ethereum",
+          "day": "2025-04-09",
+          "volume_usd": "75660423.88",
+          "transfers": 29459
+        },
+        {
+          "chain": "ethereum",
+          "day": "2025-04-06",
+          "volume_usd": "102617059.44",
+          "transfers": 68077
+        },
+        {
+          "chain": "ethereum",
+          "day": "2025-04-10",
+          "volume_usd": "82999198.38",
+          "transfers": 32350
+        },
+        {
+          "chain": "ethereum",
+          "day": "2025-04-18",
+          "volume_usd": "119188425.10",
+          "transfers": 97285
+        },
+        {
+          "chain": "ethereum",
+          "day": "2025-04-23",
+          "volume_usd": "107471404.70",
+          "transfers": 95223
+        },
+        {
+          "chain": "ethereum",
+          "day": "2025-04-11",
+          "volume_usd": "32787791.75",
+          "transfers": 11738
+        },
+        {
+          "chain": "ethereum",
+          "day": "2025-04-04",
+          "volume_usd": "70295821.32",
+          "transfers": 82644
+        },
+        {
+          "chain": "ethereum",
+          "day": "2025-04-24",
+          "volume_usd": "61060017.55",
+          "transfers": 52124
+        },
+        {
+          "chain": "ethereum",
+          "day": "2025-03-31",
+          "volume_usd": "19562172.09",
+          "transfers": 38363
+        },
+        {
+          "chain": "ethereum",
+          "day": "2025-04-03",
+          "volume_usd": "57380260.65",
+          "transfers": 70658
+        },
+        {
+          "chain": "ethereum",
+          "day": "2025-04-07",
+          "volume_usd": "83612308.25",
+          "transfers": 69349
+        },
+        {
+          "chain": "ethereum",
+          "day": "2025-04-01",
+          "volume_usd": "52199445.55",
+          "transfers": 77495
+        },
+        {
+          "chain": "ethereum",
+          "day": "2025-04-21",
+          "volume_usd": "106884362.07",
+          "transfers": 91757
+        },
+        {
+          "chain": "ethereum",
+          "day": "2025-04-20",
+          "volume_usd": "101178523.70",
+          "transfers": 88134
+        },
+        {
+          "chain": "ethereum",
+          "day": "2025-04-02",
+          "volume_usd": "53644719.10",
+          "transfers": 72567
+        }
+      ],
+      "row_count": 21
+    },
+    "08": {
+      "id": "08",
+      "file": "08_top_tokens.sql",
+      "title": "Top tokens by volume",
+      "status": "ok",
+      "columns": [
+        "symbol",
+        "volume_usd",
+        "transfers",
+        "volume_share_pct",
+        "volume_rank"
+      ],
+      "rows": [
+        {
+          "symbol": "XGC",
+          "volume_usd": "591973622936.56",
+          "transfers": 3,
+          "volume_share_pct": null,
+          "volume_rank": 1
+        },
+        {
+          "symbol": "KBTC",
+          "volume_usd": "498954094346.04",
+          "transfers": 2,
+          "volume_share_pct": null,
+          "volume_rank": 2
+        },
+        {
+          "symbol": "USDC",
+          "volume_usd": "434454166901.68",
+          "transfers": 4614646,
+          "volume_share_pct": null,
+          "volume_rank": 3
+        },
+        {
+          "symbol": "WETH",
+          "volume_usd": "312254301191.07",
+          "transfers": 4791379,
+          "volume_share_pct": null,
+          "volume_rank": 4
+        },
+        {
+          "symbol": "DAI",
+          "volume_usd": "286497244101.19",
+          "transfers": 251057,
+          "volume_share_pct": null,
+          "volume_rank": 5
+        },
+        {
+          "symbol": "USDT",
+          "volume_usd": "185453750405.60",
+          "transfers": 5831241,
+          "volume_share_pct": null,
+          "volume_rank": 6
+        },
+        {
+          "symbol": "WBTC",
+          "volume_usd": "44058872602.47",
+          "transfers": 392009,
+          "volume_share_pct": null,
+          "volume_rank": 7
+        },
+        {
+          "symbol": "ETH",
+          "volume_usd": "43010382841.24",
+          "transfers": 17521638,
+          "volume_share_pct": null,
+          "volume_rank": 8
+        },
+        {
+          "symbol": "stETH",
+          "volume_usd": "5072097855.38",
+          "transfers": 54883,
+          "volume_share_pct": null,
+          "volume_rank": 9
+        },
+        {
+          "symbol": "LINK",
+          "volume_usd": "2111305503.29",
+          "transfers": 139484,
+          "volume_share_pct": null,
+          "volume_rank": 10
+        },
+        {
+          "symbol": "OM",
+          "volume_usd": "1756000609.97",
+          "transfers": 33075,
+          "volume_share_pct": null,
+          "volume_rank": 11
+        },
+        {
+          "symbol": "AAVE",
+          "volume_usd": "1427649955.70",
+          "transfers": 75169,
+          "volume_share_pct": null,
+          "volume_rank": 12
+        },
+        {
+          "symbol": "TRYB",
+          "volume_usd": "1128226910.34",
+          "transfers": 593,
+          "volume_share_pct": null,
+          "volume_rank": 13
+        },
+        {
+          "symbol": "ONDO",
+          "volume_usd": "1021922585.28",
+          "transfers": 83532,
+          "volume_share_pct": null,
+          "volume_rank": 14
+        },
+        {
+          "symbol": "UNI",
+          "volume_usd": "943872877.94",
+          "transfers": 64867,
+          "volume_share_pct": null,
+          "volume_rank": 15
+        },
+        {
+          "symbol": "EUROC",
+          "volume_usd": "801454098.54",
+          "transfers": 15526,
+          "volume_share_pct": null,
+          "volume_rank": 16
+        },
+        {
+          "symbol": "PAXG",
+          "volume_usd": "799171858.51",
+          "transfers": 107092,
+          "volume_share_pct": null,
+          "volume_rank": 17
+        },
+        {
+          "symbol": "CRV",
+          "volume_usd": "792021232.50",
+          "transfers": 178907,
+          "volume_share_pct": null,
+          "volume_rank": 18
+        },
+        {
+          "symbol": "SHIB",
+          "volume_usd": "735864663.59",
+          "transfers": 109691,
+          "volume_share_pct": null,
+          "volume_rank": 19
+        },
+        {
+          "symbol": "",
+          "volume_usd": "734969311.23",
+          "transfers": 36544,
+          "volume_share_pct": null,
+          "volume_rank": 20
+        },
+        {
+          "symbol": "AERGO",
+          "volume_usd": "727666709.54",
+          "transfers": 36204,
+          "volume_share_pct": null,
+          "volume_rank": 21
+        },
+        {
+          "symbol": "MASK",
+          "volume_usd": "395864579.16",
+          "transfers": 24246,
+          "volume_share_pct": null,
+          "volume_rank": 22
+        },
+        {
+          "symbol": "rETH",
+          "volume_usd": "385985094.13",
+          "transfers": 15726,
+          "volume_share_pct": null,
+          "volume_rank": 23
+        },
+        {
+          "symbol": "XCN",
+          "volume_usd": "383026896.04",
+          "transfers": 70135,
+          "volume_share_pct": null,
+          "volume_rank": 24
+        },
+        {
+          "symbol": "COMP",
+          "volume_usd": "361668743.71",
+          "transfers": 27687,
+          "volume_share_pct": null,
+          "volume_rank": 25
+        },
+        {
+          "symbol": "AXS",
+          "volume_usd": "357822646.37",
+          "transfers": 9227,
+          "volume_share_pct": null,
+          "volume_rank": 26
+        },
+        {
+          "symbol": "FRAX",
+          "volume_usd": "341087167.66",
+          "transfers": 21186,
+          "volume_share_pct": null,
+          "volume_rank": 27
+        },
+        {
+          "symbol": "FET",
+          "volume_usd": "339576606.03",
+          "transfers": 34565,
+          "volume_share_pct": null,
+          "volume_rank": 28
+        },
+        {
+          "symbol": "IMX",
+          "volume_usd": "298425890.68",
+          "transfers": 22165,
+          "volume_share_pct": null,
+          "volume_rank": 29
+        },
+        {
+          "symbol": "LDO",
+          "volume_usd": "271224704.47",
+          "transfers": 16992,
+          "volume_share_pct": null,
+          "volume_rank": 30
+        }
+      ],
+      "row_count": 30
+    },
+    "09": {
+      "id": "09",
+      "file": "09_stablecoin_share.sql",
+      "title": "Stablecoin share of volume",
+      "status": "ok",
+      "columns": [
+        "day",
+        "total_volume_usd",
+        "stablecoin_volume_usd",
+        "stablecoin_share_pct"
+      ],
+      "rows": [
+        {
+          "day": "2025-04-19",
+          "total_volume_usd": "29325829413.58",
+          "stablecoin_volume_usd": "15149461017.18",
+          "stablecoin_share_pct": null
+        },
+        {
+          "day": "2025-04-03",
+          "total_volume_usd": "69717442635.55",
+          "stablecoin_volume_usd": "49833626632.65",
+          "stablecoin_share_pct": null
+        },
+        {
+          "day": "2025-04-11",
+          "total_volume_usd": "36648500415.20",
+          "stablecoin_volume_usd": "28022347868.24",
+          "stablecoin_share_pct": null
+        },
+        {
+          "day": "2025-04-09",
+          "total_volume_usd": "100123430786.10",
+          "stablecoin_volume_usd": "73013930871.87",
+          "stablecoin_share_pct": null
+        },
+        {
+          "day": "2025-04-21",
+          "total_volume_usd": "78464392858.52",
+          "stablecoin_volume_usd": "52772132532.62",
+          "stablecoin_share_pct": null
+        },
+        {
+          "day": "2025-04-05",
+          "total_volume_usd": "38116581074.06",
+          "stablecoin_volume_usd": "21339137199.10",
+          "stablecoin_share_pct": null
+        },
+        {
+          "day": "2025-04-07",
+          "total_volume_usd": "97545435345.87",
+          "stablecoin_volume_usd": "68577173930.36",
+          "stablecoin_share_pct": null
+        },
+        {
+          "day": "2025-04-16",
+          "total_volume_usd": "42370687941.21",
+          "stablecoin_volume_usd": "25376188808.79",
+          "stablecoin_share_pct": null
+        },
+        {
+          "day": "2025-04-23",
+          "total_volume_usd": "82729088102.63",
+          "stablecoin_volume_usd": "55385983376.38",
+          "stablecoin_share_pct": null
+        },
+        {
+          "day": "2025-04-10",
+          "total_volume_usd": "67585070185.34",
+          "stablecoin_volume_usd": "50132526627.39",
+          "stablecoin_share_pct": null
+        },
+        {
+          "day": "2025-04-08",
+          "total_volume_usd": "72057139852.45",
+          "stablecoin_volume_usd": "51320199234.75",
+          "stablecoin_share_pct": null
+        },
+        {
+          "day": "2025-04-17",
+          "total_volume_usd": "68587004976.63",
+          "stablecoin_volume_usd": "44600061142.25",
+          "stablecoin_share_pct": null
+        },
+        {
+          "day": "2025-04-01",
+          "total_volume_usd": "67538182964.77",
+          "stablecoin_volume_usd": "46823807472.40",
+          "stablecoin_share_pct": null
+        },
+        {
+          "day": "2025-04-02",
+          "total_volume_usd": "72082239669.48",
+          "stablecoin_volume_usd": "52836087585.09",
+          "stablecoin_share_pct": null
+        },
+        {
+          "day": "2025-04-20",
+          "total_volume_usd": "46692123412.59",
+          "stablecoin_volume_usd": "31154148069.75",
+          "stablecoin_share_pct": null
+        },
+        {
+          "day": "2025-04-06",
+          "total_volume_usd": "46460051677.59",
+          "stablecoin_volume_usd": "26038816765.57",
+          "stablecoin_share_pct": null
+        },
+        {
+          "day": "2025-04-24",
+          "total_volume_usd": "43823502519.55",
+          "stablecoin_volume_usd": "27068845041.75",
+          "stablecoin_share_pct": null
+        },
+        {
+          "day": "2025-03-31",
+          "total_volume_usd": "136230257566.47",
+          "stablecoin_volume_usd": "25591258850.58",
+          "stablecoin_share_pct": null
+        },
+        {
+          "day": "2025-04-18",
+          "total_volume_usd": "656367229464.13",
+          "stablecoin_volume_usd": "44134803989.02",
+          "stablecoin_share_pct": null
+        },
+        {
+          "day": "2025-04-04",
+          "total_volume_usd": "478553548017.77",
+          "stablecoin_volume_usd": "53363878893.37",
+          "stablecoin_share_pct": null
+        },
+        {
+          "day": "2025-04-22",
+          "total_volume_usd": "96995789780.59",
+          "stablecoin_volume_usd": "63875613124.75",
+          "stablecoin_share_pct": null
+        }
+      ],
+      "row_count": 21
+    },
+    "10": {
+      "id": "10",
+      "file": "10_trade_size_distribution.sql",
+      "title": "Trade size distribution",
+      "status": "ok",
+      "columns": [
+        "day",
+        "size_bucket",
+        "transfers",
+        "volume_usd",
+        "count_share_pct",
+        "volume_share_pct"
+      ],
+      "rows": [
+        {
+          "day": "2025-04-06",
+          "size_bucket": "6_>=$1M",
+          "transfers": 5018,
+          "volume_usd": "35561753557.89",
+          "count_share_pct": 0.6,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-06",
+          "size_bucket": "3_$1K-10K",
+          "transfers": 198827,
+          "volume_usd": "720187145.09",
+          "count_share_pct": 23.61,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-06",
+          "size_bucket": "5_$100K-1M",
+          "transfers": 24865,
+          "volume_usd": "7231104748.46",
+          "count_share_pct": 2.95,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-06",
+          "size_bucket": "4_$10K-100K",
+          "transfers": 86243,
+          "volume_usd": "2838271357.71",
+          "count_share_pct": 10.24,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-06",
+          "size_bucket": "1_<$100",
+          "transfers": 278791,
+          "volume_usd": "8219772.16",
+          "count_share_pct": 33.11,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-06",
+          "size_bucket": "2_$100-1K",
+          "transfers": 248328,
+          "volume_usd": "100515096.29",
+          "count_share_pct": 29.49,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-20",
+          "size_bucket": "6_>=$1M",
+          "transfers": 3306,
+          "volume_usd": "40745452096.89",
+          "count_share_pct": 0.2,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-20",
+          "size_bucket": "2_$100-1K",
+          "transfers": 444042,
+          "volume_usd": "157742202.53",
+          "count_share_pct": 26.62,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-20",
+          "size_bucket": "4_$10K-100K",
+          "transfers": 52245,
+          "volume_usd": "1628101682.32",
+          "count_share_pct": 3.13,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-20",
+          "size_bucket": "3_$1K-10K",
+          "transfers": 197632,
+          "volume_usd": "594270455.63",
+          "count_share_pct": 11.85,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-20",
+          "size_bucket": "5_$100K-1M",
+          "transfers": 11842,
+          "volume_usd": "3544566854.72",
+          "count_share_pct": 0.71,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-20",
+          "size_bucket": "1_<$100",
+          "transfers": 959239,
+          "volume_usd": "21990120.51",
+          "count_share_pct": 57.5,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-02",
+          "size_bucket": "5_$100K-1M",
+          "transfers": 25411,
+          "volume_usd": "7446615565.52",
+          "count_share_pct": 2.67,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-02",
+          "size_bucket": "1_<$100",
+          "transfers": 350963,
+          "volume_usd": "8432401.06",
+          "count_share_pct": 36.87,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-02",
+          "size_bucket": "4_$10K-100K",
+          "transfers": 81776,
+          "volume_usd": "2642209477.64",
+          "count_share_pct": 8.59,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-02",
+          "size_bucket": "6_>=$1M",
+          "transfers": 6005,
+          "volume_usd": "61131973316.62",
+          "count_share_pct": 0.63,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-02",
+          "size_bucket": "2_$100-1K",
+          "transfers": 272385,
+          "volume_usd": "109647258.82",
+          "count_share_pct": 28.62,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-02",
+          "size_bucket": "3_$1K-10K",
+          "transfers": 215339,
+          "volume_usd": "743361649.81",
+          "count_share_pct": 22.62,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-08",
+          "size_bucket": "5_$100K-1M",
+          "transfers": 25410,
+          "volume_usd": "7794673170.84",
+          "count_share_pct": 2.42,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-08",
+          "size_bucket": "2_$100-1K",
+          "transfers": 309059,
+          "volume_usd": "124916389.67",
+          "count_share_pct": 29.41,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-08",
+          "size_bucket": "1_<$100",
+          "transfers": 394459,
+          "volume_usd": "9954998.99",
+          "count_share_pct": 37.53,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-08",
+          "size_bucket": "6_>=$1M",
+          "transfers": 6973,
+          "volume_usd": "60547211764.11",
+          "count_share_pct": 0.66,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-08",
+          "size_bucket": "4_$10K-100K",
+          "transfers": 84647,
+          "volume_usd": "2798940657.66",
+          "count_share_pct": 8.05,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-08",
+          "size_bucket": "3_$1K-10K",
+          "transfers": 230461,
+          "volume_usd": "781442871.18",
+          "count_share_pct": 21.93,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-04",
+          "size_bucket": "1_<$100",
+          "transfers": 356737,
+          "volume_usd": "8685983.29",
+          "count_share_pct": 37.81,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-04",
+          "size_bucket": "4_$10K-100K",
+          "transfers": 77506,
+          "volume_usd": "2568066239.49",
+          "count_share_pct": 8.22,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-04",
+          "size_bucket": "3_$1K-10K",
+          "transfers": 201904,
+          "volume_usd": "711544978.22",
+          "count_share_pct": 21.4,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-04",
+          "size_bucket": "5_$100K-1M",
+          "transfers": 25058,
+          "volume_usd": "7434147906.80",
+          "count_share_pct": 2.66,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-04",
+          "size_bucket": "2_$100-1K",
+          "transfers": 276469,
+          "volume_usd": "112608249.34",
+          "count_share_pct": 29.3,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-04",
+          "size_bucket": "6_>=$1M",
+          "transfers": 5787,
+          "volume_usd": "467718494660.64",
+          "count_share_pct": 0.61,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-05",
+          "size_bucket": "2_$100-1K",
+          "transfers": 209052,
+          "volume_usd": "80242300.24",
+          "count_share_pct": 30.64,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-05",
+          "size_bucket": "6_>=$1M",
+          "transfers": 3220,
+          "volume_usd": "32792762587.13",
+          "count_share_pct": 0.47,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-05",
+          "size_bucket": "1_<$100",
+          "transfers": 297171,
+          "volume_usd": "7936250.56",
+          "count_share_pct": 43.56,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-05",
+          "size_bucket": "3_$1K-10K",
+          "transfers": 121722,
+          "volume_usd": "405048881.31",
+          "count_share_pct": 17.84,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-05",
+          "size_bucket": "5_$100K-1M",
+          "transfers": 11722,
+          "volume_usd": "3537860763.80",
+          "count_share_pct": 1.72,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-05",
+          "size_bucket": "4_$10K-100K",
+          "transfers": 39373,
+          "volume_usd": "1292730291.03",
+          "count_share_pct": 5.77,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-03",
+          "size_bucket": "5_$100K-1M",
+          "transfers": 25171,
+          "volume_usd": "7599750776.32",
+          "count_share_pct": 2.7,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-03",
+          "size_bucket": "1_<$100",
+          "transfers": 335239,
+          "volume_usd": "9106551.08",
+          "count_share_pct": 35.9,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-03",
+          "size_bucket": "6_>=$1M",
+          "transfers": 6119,
+          "volume_usd": "58567392479.24",
+          "count_share_pct": 0.66,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-03",
+          "size_bucket": "4_$10K-100K",
+          "transfers": 80171,
+          "volume_usd": "2691251072.85",
+          "count_share_pct": 8.59,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-03",
+          "size_bucket": "3_$1K-10K",
+          "transfers": 209301,
+          "volume_usd": "736710350.16",
+          "count_share_pct": 22.41,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-03",
+          "size_bucket": "2_$100-1K",
+          "transfers": 277831,
+          "volume_usd": "113231405.90",
+          "count_share_pct": 29.75,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-11",
+          "size_bucket": "3_$1K-10K",
+          "transfers": 86949,
+          "volume_usd": "287453506.26",
+          "count_share_pct": 21.66,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-11",
+          "size_bucket": "5_$100K-1M",
+          "transfers": 9732,
+          "volume_usd": "2922334046.34",
+          "count_share_pct": 2.42,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-11",
+          "size_bucket": "1_<$100",
+          "transfers": 155553,
+          "volume_usd": "4435393.60",
+          "count_share_pct": 38.76,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-11",
+          "size_bucket": "2_$100-1K",
+          "transfers": 111960,
+          "volume_usd": "44716806.10",
+          "count_share_pct": 27.89,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-11",
+          "size_bucket": "4_$10K-100K",
+          "transfers": 33910,
+          "volume_usd": "1115725490.98",
+          "count_share_pct": 8.45,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-11",
+          "size_bucket": "6_>=$1M",
+          "transfers": 3270,
+          "volume_usd": "32273835171.92",
+          "count_share_pct": 0.81,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-19",
+          "size_bucket": "1_<$100",
+          "transfers": 989337,
+          "volume_usd": "18996913.09",
+          "count_share_pct": 59.43,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-19",
+          "size_bucket": "5_$100K-1M",
+          "transfers": 10943,
+          "volume_usd": "3258549536.48",
+          "count_share_pct": 0.66,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-19",
+          "size_bucket": "4_$10K-100K",
+          "transfers": 49150,
+          "volume_usd": "1582770061.00",
+          "count_share_pct": 2.95,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-19",
+          "size_bucket": "6_>=$1M",
+          "transfers": 3175,
+          "volume_usd": "23748554251.01",
+          "count_share_pct": 0.19,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-19",
+          "size_bucket": "3_$1K-10K",
+          "transfers": 186357,
+          "volume_usd": "562323941.52",
+          "count_share_pct": 11.2,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-19",
+          "size_bucket": "2_$100-1K",
+          "transfers": 425680,
+          "volume_usd": "154634710.49",
+          "count_share_pct": 25.57,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-03-31",
+          "size_bucket": "1_<$100",
+          "transfers": 179303,
+          "volume_usd": "4834933.50",
+          "count_share_pct": 36.55,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-03-31",
+          "size_bucket": "6_>=$1M",
+          "transfers": 3269,
+          "volume_usd": "130843429858.63",
+          "count_share_pct": 0.67,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-03-31",
+          "size_bucket": "2_$100-1K",
+          "transfers": 150934,
+          "volume_usd": "61629783.75",
+          "count_share_pct": 30.77,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-03-31",
+          "size_bucket": "5_$100K-1M",
+          "transfers": 12217,
+          "volume_usd": "3671120319.77",
+          "count_share_pct": 2.49,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-03-31",
+          "size_bucket": "3_$1K-10K",
+          "transfers": 105657,
+          "volume_usd": "362250930.85",
+          "count_share_pct": 21.54,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-03-31",
+          "size_bucket": "4_$10K-100K",
+          "transfers": 39221,
+          "volume_usd": "1286991739.96",
+          "count_share_pct": 7.99,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-09",
+          "size_bucket": "3_$1K-10K",
+          "transfers": 272472,
+          "volume_usd": "961971324.65",
+          "count_share_pct": 25.52,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-09",
+          "size_bucket": "5_$100K-1M",
+          "transfers": 32203,
+          "volume_usd": "9580884135.56",
+          "count_share_pct": 3.02,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-09",
+          "size_bucket": "1_<$100",
+          "transfers": 334761,
+          "volume_usd": "9576380.83",
+          "count_share_pct": 31.35,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-09",
+          "size_bucket": "4_$10K-100K",
+          "transfers": 110463,
+          "volume_usd": "3604757796.73",
+          "count_share_pct": 10.34,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-09",
+          "size_bucket": "2_$100-1K",
+          "transfers": 309905,
+          "volume_usd": "126475014.55",
+          "count_share_pct": 29.02,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-09",
+          "size_bucket": "6_>=$1M",
+          "transfers": 8072,
+          "volume_usd": "85839766133.79",
+          "count_share_pct": 0.76,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-21",
+          "size_bucket": "1_<$100",
+          "transfers": 1120068,
+          "volume_usd": "22090645.87",
+          "count_share_pct": 54.74,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-21",
+          "size_bucket": "2_$100-1K",
+          "transfers": 519797,
+          "volume_usd": "191766715.42",
+          "count_share_pct": 25.4,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-21",
+          "size_bucket": "3_$1K-10K",
+          "transfers": 285614,
+          "volume_usd": "917787556.45",
+          "count_share_pct": 13.96,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-21",
+          "size_bucket": "5_$100K-1M",
+          "transfers": 24023,
+          "volume_usd": "7271558121.12",
+          "count_share_pct": 1.17,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-21",
+          "size_bucket": "4_$10K-100K",
+          "transfers": 90457,
+          "volume_usd": "2866066410.01",
+          "count_share_pct": 4.42,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-21",
+          "size_bucket": "6_>=$1M",
+          "transfers": 6302,
+          "volume_usd": "67195123409.64",
+          "count_share_pct": 0.31,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-24",
+          "size_bucket": "5_$100K-1M",
+          "transfers": 16444,
+          "volume_usd": "5232299138.46",
+          "count_share_pct": 1.29,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-24",
+          "size_bucket": "4_$10K-100K",
+          "transfers": 63386,
+          "volume_usd": "2084818178.52",
+          "count_share_pct": 4.97,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-24",
+          "size_bucket": "2_$100-1K",
+          "transfers": 333911,
+          "volume_usd": "122900300.25",
+          "count_share_pct": 26.19,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-24",
+          "size_bucket": "3_$1K-10K",
+          "transfers": 178810,
+          "volume_usd": "572578463.95",
+          "count_share_pct": 14.03,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-24",
+          "size_bucket": "6_>=$1M",
+          "transfers": 4313,
+          "volume_usd": "35795760950.46",
+          "count_share_pct": 0.34,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-24",
+          "size_bucket": "1_<$100",
+          "transfers": 678040,
+          "volume_usd": "15145487.91",
+          "count_share_pct": 53.18,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-07",
+          "size_bucket": "5_$100K-1M",
+          "transfers": 40698,
+          "volume_usd": "12403968709.88",
+          "count_share_pct": 3.63,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-07",
+          "size_bucket": "1_<$100",
+          "transfers": 304915,
+          "volume_usd": "9235326.27",
+          "count_share_pct": 27.19,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-07",
+          "size_bucket": "4_$10K-100K",
+          "transfers": 142906,
+          "volume_usd": "4709766729.12",
+          "count_share_pct": 12.74,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-07",
+          "size_bucket": "3_$1K-10K",
+          "transfers": 305887,
+          "volume_usd": "1116507476.56",
+          "count_share_pct": 27.28,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-07",
+          "size_bucket": "2_$100-1K",
+          "transfers": 317758,
+          "volume_usd": "133062941.89",
+          "count_share_pct": 28.34,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-07",
+          "size_bucket": "6_>=$1M",
+          "transfers": 9130,
+          "volume_usd": "79172894162.15",
+          "count_share_pct": 0.81,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-10",
+          "size_bucket": "2_$100-1K",
+          "transfers": 287765,
+          "volume_usd": "115181061.09",
+          "count_share_pct": 28.51,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-10",
+          "size_bucket": "6_>=$1M",
+          "transfers": 7059,
+          "volume_usd": "55951520148.64",
+          "count_share_pct": 0.7,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-10",
+          "size_bucket": "3_$1K-10K",
+          "transfers": 223904,
+          "volume_usd": "772172076.23",
+          "count_share_pct": 22.18,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-10",
+          "size_bucket": "5_$100K-1M",
+          "transfers": 26296,
+          "volume_usd": "7860931924.41",
+          "count_share_pct": 2.6,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-10",
+          "size_bucket": "4_$10K-100K",
+          "transfers": 87038,
+          "volume_usd": "2872795237.42",
+          "count_share_pct": 8.62,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-10",
+          "size_bucket": "1_<$100",
+          "transfers": 377401,
+          "volume_usd": "12469737.56",
+          "count_share_pct": 37.39,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-16",
+          "size_bucket": "3_$1K-10K",
+          "transfers": 209089,
+          "volume_usd": "655120973.30",
+          "count_share_pct": 15.21,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-16",
+          "size_bucket": "5_$100K-1M",
+          "transfers": 17836,
+          "volume_usd": "5276447139.61",
+          "count_share_pct": 1.3,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-16",
+          "size_bucket": "6_>=$1M",
+          "transfers": 4570,
+          "volume_usd": "34105313171.81",
+          "count_share_pct": 0.33,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-16",
+          "size_bucket": "1_<$100",
+          "transfers": 704258,
+          "volume_usd": "14794693.43",
+          "count_share_pct": 51.22,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-16",
+          "size_bucket": "4_$10K-100K",
+          "transfers": 68057,
+          "volume_usd": "2178457385.99",
+          "count_share_pct": 4.95,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-16",
+          "size_bucket": "2_$100-1K",
+          "transfers": 371175,
+          "volume_usd": "140554577.07",
+          "count_share_pct": 26.99,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-23",
+          "size_bucket": "2_$100-1K",
+          "transfers": 578039,
+          "volume_usd": "216027808.35",
+          "count_share_pct": 26.06,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-23",
+          "size_bucket": "6_>=$1M",
+          "transfers": 7980,
+          "volume_usd": "67306605155.07",
+          "count_share_pct": 0.36,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-23",
+          "size_bucket": "5_$100K-1M",
+          "transfers": 33689,
+          "volume_usd": "10112729540.17",
+          "count_share_pct": 1.52,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-23",
+          "size_bucket": "1_<$100",
+          "transfers": 1141676,
+          "volume_usd": "23733823.59",
+          "count_share_pct": 51.48,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-23",
+          "size_bucket": "4_$10K-100K",
+          "transfers": 120881,
+          "volume_usd": "3961765234.01",
+          "count_share_pct": 5.45,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-23",
+          "size_bucket": "3_$1K-10K",
+          "transfers": 335471,
+          "volume_usd": "1108226541.44",
+          "count_share_pct": 15.13,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-22",
+          "size_bucket": "3_$1K-10K",
+          "transfers": 326781,
+          "volume_usd": "1065897268.47",
+          "count_share_pct": 15.24,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-22",
+          "size_bucket": "1_<$100",
+          "transfers": 1108383,
+          "volume_usd": "22149914.34",
+          "count_share_pct": 51.71,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-22",
+          "size_bucket": "6_>=$1M",
+          "transfers": 9759,
+          "volume_usd": "81541105400.03",
+          "count_share_pct": 0.46,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-22",
+          "size_bucket": "4_$10K-100K",
+          "transfers": 118922,
+          "volume_usd": "3947740321.11",
+          "count_share_pct": 5.55,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-22",
+          "size_bucket": "2_$100-1K",
+          "transfers": 546234,
+          "volume_usd": "204647220.18",
+          "count_share_pct": 25.48,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-22",
+          "size_bucket": "5_$100K-1M",
+          "transfers": 33465,
+          "volume_usd": "10214249656.45",
+          "count_share_pct": 1.56,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-01",
+          "size_bucket": "5_$100K-1M",
+          "transfers": 20690,
+          "volume_usd": "6286865351.33",
+          "count_share_pct": 2.31,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-01",
+          "size_bucket": "3_$1K-10K",
+          "transfers": 194564,
+          "volume_usd": "672290262.52",
+          "count_share_pct": 21.7,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-01",
+          "size_bucket": "4_$10K-100K",
+          "transfers": 71907,
+          "volume_usd": "2348910858.99",
+          "count_share_pct": 8.02,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-01",
+          "size_bucket": "1_<$100",
+          "transfers": 337565,
+          "volume_usd": "8577856.02",
+          "count_share_pct": 37.65,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-01",
+          "size_bucket": "2_$100-1K",
+          "transfers": 266458,
+          "volume_usd": "107773444.48",
+          "count_share_pct": 29.72,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-01",
+          "size_bucket": "6_>=$1M",
+          "transfers": 5520,
+          "volume_usd": "58113765191.43",
+          "count_share_pct": 0.62,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-17",
+          "size_bucket": "4_$10K-100K",
+          "transfers": 86849,
+          "volume_usd": "2824253072.47",
+          "count_share_pct": 4.6,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-17",
+          "size_bucket": "5_$100K-1M",
+          "transfers": 24023,
+          "volume_usd": "7055126962.89",
+          "count_share_pct": 1.27,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-17",
+          "size_bucket": "1_<$100",
+          "transfers": 1016908,
+          "volume_usd": "21351474.36",
+          "count_share_pct": 53.91,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-17",
+          "size_bucket": "2_$100-1K",
+          "transfers": 494520,
+          "volume_usd": "181921635.03",
+          "count_share_pct": 26.22,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-17",
+          "size_bucket": "6_>=$1M",
+          "transfers": 6482,
+          "volume_usd": "57689460711.36",
+          "count_share_pct": 0.34,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-17",
+          "size_bucket": "3_$1K-10K",
+          "transfers": 257397,
+          "volume_usd": "814891120.52",
+          "count_share_pct": 13.65,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-18",
+          "size_bucket": "6_>=$1M",
+          "transfers": 5124,
+          "volume_usd": "648360669944.22",
+          "count_share_pct": 0.29,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-18",
+          "size_bucket": "3_$1K-10K",
+          "transfers": 223706,
+          "volume_usd": "686890479.94",
+          "count_share_pct": 12.51,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-18",
+          "size_bucket": "2_$100-1K",
+          "transfers": 464722,
+          "volume_usd": "171827801.60",
+          "count_share_pct": 26,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-18",
+          "size_bucket": "1_<$100",
+          "transfers": 1010767,
+          "volume_usd": "20181074.99",
+          "count_share_pct": 56.54,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-18",
+          "size_bucket": "5_$100K-1M",
+          "transfers": 16376,
+          "volume_usd": "4962705320.20",
+          "count_share_pct": 0.92,
+          "volume_share_pct": null
+        },
+        {
+          "day": "2025-04-18",
+          "size_bucket": "4_$10K-100K",
+          "transfers": 66928,
+          "volume_usd": "2164954843.17",
+          "count_share_pct": 3.74,
+          "volume_share_pct": null
+        }
+      ],
+      "row_count": 126
+    }
+  }
+}

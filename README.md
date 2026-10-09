@@ -69,32 +69,49 @@ execution environment changed, and this README stays honest about it:
 
 ---
 
-## 🖥️ Local dashboard (Alchemy) — runs **today**
+## 🖥️ Dashboard hub — two boards, one entry page
 
-While the SQL layer waits for a platform (see above), this repo ships a
-**working, runnable local dashboard** built on the supplied **Alchemy** endpoint:
+`dashboard/index.html` is a **tabbed hub** over two **independent** boards with
+**different platforms and different data windows**, deliberately kept apart:
+
+| Tab | Board | Platform | Data window |
+| --- | --- | --- | --- |
+| 🟢 **Tab 1 — real-time** | CEX flow / net flow | **Alchemy** (Ethereum RPC + Transfers + Prices API) | rolling **last N days**, live |
+| 🟡 **Tab 2 — historical snapshot** | Full 10-panel SQL set | **Chainbase Data Cloud** SQL API | frozen snapshot ending **2025-04-24** |
+
+**Every panel carries a badge stating its data window**, so the two windows can
+never be confused.
+
+### Build & open
 
 ```bash
+# Board 1 — Alchemy (live, recent)
 conda run -n dune_dashboard python scripts/alchemy_pipeline.py --days 7 --max-pages 10
+
+# Board 2 — Chainbase (historical snapshot; slow: free-tier rate limits)
+conda run -n dune_dashboard python scripts/chainbase_pipeline.py
+
+# Build the tabbed hub, then open it
+conda run -n dune_dashboard python scripts/build_hub.py
 open dashboard/index.html          # macOS
 ```
 
-It renders KPI counters, a daily net-flow-by-exchange bar chart, inflow vs
-outflow, net flow by asset, and an exchange summary table from **Ethereum-mainnet
-CEX flows**. It fetches real data live (Transfers + Prices API).
-
-| ✅ Implemented locally (Alchemy) | ⏳ Pending platform (needs SQL + curated DEX tables) |
+| Tab 1 — Alchemy (live) | Tab 2 — Chainbase (snapshot ending 2025-04-24) |
 | --- | --- |
-| 02 · exchange net flow | 01 · CEX/DEX ratio |
-| 06 · CEX inflow/outflow by exchange | 03 · aggregator market share |
-| KPI counters, asset breakdown, summary table | 04 · token listing impact |
-|  | 05 · unique traders |
-|  | 07 · DEX volume by chain |
-|  | 08 · top token pairs |
-|  | 09 · stablecoin share |
-|  | 10 · trade size distribution |
+| 02 exchange net flow · 06 CEX flow by exchange · KPI counters · asset breakdown · exchange summary | **all 10 panels**: 01 CEX/DEX ratio · 02 net flow · 03 aggregator share · 04 listing impact · 05 unique senders · 06 CEX flow · 07 DEX volume by chain · 08 top tokens · 09 stablecoin share · 10 size distribution |
 
-📄 Details, method and caveats: **[`docs/alchemy-local-dashboard.md`](docs/alchemy-local-dashboard.md)**.
+> ⚠️ Chainbase exposes only **raw / partially-curated** tables, so the DEX-centric
+> panels there use documented **proxies** (e.g. transfers touching known DEX
+> router addresses instead of decoded swaps). Each is labelled in the query file.
+>
+> ℹ️ **Chainbase's free tier is heavily rate-limited** (HTTP 429, ~20 s back-off),
+> so a full 10-query refresh takes ~15 minutes. All 10 queries executed
+> successfully for the snapshot above; panel 04 (listing impact) is sparse for the
+> example token and is configurable in `config/chainbase_targets.json`.
+
+📄 Details: [`docs/alchemy-local-dashboard.md`](docs/alchemy-local-dashboard.md) ·
+[`docs/chainbase-dashboard.md`](docs/chainbase-dashboard.md) ·
+[`docs/platform-migration.md`](docs/platform-migration.md).
 
 ---
 
@@ -156,6 +173,7 @@ dune-dashboard/
 │   ├── 09_stablecoin_share.sql
 │   ├── 10_trade_size_distribution.sql
 │   └── dune_query_ids.json         # generated: local file -> Dune query id/url
+│   └── chainbase/                  # Chainbase SQL — historical snapshot board (Tab 2)
 ├── docs/
 │   ├── dashboard_guide.md          # step-by-step Dune Dashboard build guide
 │   ├── alchemy-local-dashboard.md  # the runnable local (Alchemy) dashboard
@@ -165,14 +183,20 @@ dune-dashboard/
 │   ├── query-catalog.md            # query -> panel -> visualization mapping
 │   └── screenshots/                # dashboard screenshots (.gitkeep tracked)
 ├── config/
-│   └── cex_addresses.json          # editable CEX address list (local pipeline)
-├── dashboard/                      # generated local dashboard (index.html)
-│   ├── index.html
+│   ├── cex_addresses.json          # editable CEX address list (both boards)
+│   └── chainbase_targets.json      # Chainbase window + DEX router / aggregator addresses
+├── dashboard/                      # generated: the tabbed hub + both boards
+│   ├── index.html                  # ← unified entry page (tabs)
+│   ├── hub.js
+│   ├── alchemy.html / alchemy.js / alchemy_data.json     # Tab 1 (live)
+│   ├── chainbase_data.json                               # Tab 2 (snapshot)
 │   └── data/                       # CSV aggregates (git-ignored)
 ├── scripts/
 │   ├── alchemy_client.py           # Alchemy RPC + Prices client
-│   ├── alchemy_pipeline.py         # fetch -> aggregate -> CSV -> HTML
+│   ├── alchemy_pipeline.py         # Board 1: fetch -> aggregate -> alchemy_data.json
 │   ├── chainbase_client.py         # Chainbase free SQL API client (verified)
+│   ├── chainbase_pipeline.py       # Board 2: run queries/chainbase -> chainbase_data.json
+│   ├── build_hub.py                # build dashboard/index.html (tabbed hub)
 │   ├── create_queries.py           # create all queries on Dune via API (Analyst)
 │   └── check_environment.py        # env / repo self-check
 ├── environment.yml                 # conda env `dune_dashboard` (python 3.11 + deps)

@@ -105,6 +105,7 @@ class Chainbase:
         """Submit, poll, and return {'columns':[...], 'rows':[[...]], 'meta':{...}}."""
         eid = self.submit(sql)
         deadline = time.time() + timeout
+        st: dict = {}
         while time.time() < deadline:
             st = self.status(eid)
             if st.get("status") in ("FINISHED", "FAILED", "CANCELLED"):
@@ -112,6 +113,9 @@ class Chainbase:
             time.sleep(poll)
         else:
             raise ChainbaseError(f"timeout waiting for {eid}")
+        if st.get("status") != "FINISHED":
+            raise ChainbaseError(
+                f"query {st.get('status')}: {str(st.get('message'))[:400]} (eid={eid})")
         res = self.results(eid)
         return {
             "columns": [c["name"] for c in res.get("columns", [])],

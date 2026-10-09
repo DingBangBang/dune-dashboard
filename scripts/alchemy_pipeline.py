@@ -252,7 +252,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
   Address list: <code>config/cex_addresses.json</code> (illustrative — verify before trusting). Transfers fetched: __N__.
 </footer>
 <script>const DATA = __DATA__;</script>
-<script src="dashboard.js"></script>
+<script src="alchemy.js"></script>
 </body></html>
 """
 
@@ -322,10 +322,19 @@ def render_html(agg: dict, window_days: int, calls: int) -> None:
             .replace("__GENERATED__", dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d %H:%M UTC"))
             .replace("__N__", str(agg["n_transfers"]))
             .replace("__DATA__", json.dumps(payload)))
-    (OUT_DIR / "index.html").write_text(html)
-    (OUT_DIR / "dashboard.js").write_text(JS_TEMPLATE)
-    print(f"  wrote {(OUT_DIR / 'index.html').relative_to(ROOT)}")
-    print(f"  wrote {(OUT_DIR / 'dashboard.js').relative_to(ROOT)}")
+    payload["meta"] = {
+        "source": "Alchemy Transfers + Prices API (Ethereum mainnet)",
+        "kind": "realtime",
+        "window_days": window_days,
+        "generated": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
+        "api_calls": calls,
+    }
+    (OUT_DIR / "alchemy.html").write_text(html)
+    (OUT_DIR / "alchemy.js").write_text(JS_TEMPLATE)
+    (OUT_DIR / "alchemy_data.json").write_text(json.dumps(payload, indent=2))
+    print(f"  wrote {(OUT_DIR / 'alchemy.html').relative_to(ROOT)}")
+    print(f"  wrote {(OUT_DIR / 'alchemy.js').relative_to(ROOT)}")
+    print(f"  wrote {(OUT_DIR / 'alchemy_data.json').relative_to(ROOT)}")
 
 
 def main() -> int:
@@ -358,7 +367,8 @@ def main() -> int:
     print(f"  outflow   : ${agg['total_outflow_usd']:,.2f}")
     print(f"  net flow  : ${agg['total_net_flow_usd']:,.2f}")
     print(f"  API calls : {client.calls}")
-    print(f"\nOpen: {(OUT_DIR / 'index.html').resolve()}")
+    print(f"\nOpen: {(OUT_DIR / 'alchemy.html').resolve()}")
+    print(f"Hub : {(OUT_DIR / 'index.html').resolve()}  (built by scripts/build_hub.py)")
     return 0
 
 

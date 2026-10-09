@@ -60,31 +60,47 @@
 
 ---
 
-## 🖥️ 本地仪表盘（Alchemy）——现在就能跑
+## 🖥️ 仪表盘 Hub —— 两个看板，一个入口页
 
-在 SQL 层等待平台就绪的同时，本仓库提供一个**可运行的本地仪表盘**，基于你提供的
-**Alchemy** 端点：
+`dashboard/index.html` 是一个 **Tab 切换的入口页**，承载两个**相互独立**的看板，
+**平台不同、数据时间窗口不同**，刻意分开呈现：
+
+| Tab | 看板 | 平台 | 数据窗口 |
+| --- | --- | --- | --- |
+| 🟢 **Tab 1 — 实时** | CEX 流向 / 净流 | **Alchemy**（以太坊 RPC + Transfers + Prices） | 滚动**最近 N 天**，实时 |
+| 🟡 **Tab 2 — 历史快照** | 完整 10 个 Panel | **Chainbase Data Cloud** SQL API | 冻结快照，截至 **2025-04-24** |
+
+**每个 Panel 上方都有数据时间范围徽标**，两个窗口绝不可能被混淆。
+
+### 构建并打开
 
 ```bash
+# 看板 1 —— Alchemy（实时/近期）
 conda run -n dune_dashboard python scripts/alchemy_pipeline.py --days 7 --max-pages 10
+
+# 看板 2 —— Chainbase（历史快照；免费版限流，较慢）
+conda run -n dune_dashboard python scripts/chainbase_pipeline.py
+
+# 生成 Tab 入口页并打开
+conda run -n dune_dashboard python scripts/build_hub.py
 open dashboard/index.html          # macOS
 ```
 
-它会实时抓取真实数据（Transfers + Prices API），渲染 KPI 计数器、按交易所的每日净流柱状图、
-流入/流出对比、按资产的净流以及交易所汇总表。
-
-| ✅ 本地已实现（Alchemy） | ⏳ 待平台（需 SQL + curated DEX 表） |
+| Tab 1 — Alchemy（实时） | Tab 2 — Chainbase（快照截至 2025-04-24） |
 | --- | --- |
-| 02 · 交易所净流 | 01 · CEX/DEX 比值 |
-| 06 · 各交易所充提 | 03 · 聚合器市场份额 |
-| KPI 计数器、资产分解、汇总表 | 04 · 代币上市影响 |
-|  | 05 · 去重交易者 |
-|  | 07 · 各链 DEX 交易量 |
-|  | 08 · Top 交易对 |
-|  | 09 · 稳定币占比 |
-|  | 10 · 交易规模分布 |
+| 02 交易所净流 · 06 各交易所充提 · KPI 计数器 · 资产分解 · 汇总表 | **全部 10 个 Panel**：01 CEX/DEX 比值 · 02 净流 · 03 聚合器份额 · 04 上市影响 · 05 去重发送方 · 06 CEX 充提 · 07 各链 DEX 量 · 08 Top 代币 · 09 稳定币占比 · 10 交易规模分布 |
 
-📄 细节、方法与注意事项：**[`docs/alchemy-local-dashboard.md`](docs/alchemy-local-dashboard.md)**。
+> ⚠️ Chainbase 只有**原始/部分 curated** 表，因此其中涉 DEX 的 Panel 使用了文档化的
+> **代理口径**（例如用「与已知 DEX 路由地址发生转账」代替「解码后的 swap」），每个在 SQL
+> 文件里都标注了。
+>
+> ℹ️ **Chainbase 免费版限流严重**（HTTP 429，约 20s 退避），因此全量 10 条查询刷新一次约需
+> **15 分钟**。上表快照中 10 条查询全部执行成功；其中 04（上市影响）示例代币行数较少，
+> 可在 `config/chainbase_targets.json` 中调整代币与日期。
+
+📄 详见：[`docs/alchemy-local-dashboard.md`](docs/alchemy-local-dashboard.md) ·
+[`docs/chainbase-dashboard.md`](docs/chainbase-dashboard.md) ·
+[`docs/platform-migration.md`](docs/platform-migration.md)。
 
 ---
 
@@ -143,6 +159,7 @@ dune-dashboard/
 │   ├── 09_stablecoin_share.sql
 │   ├── 10_trade_size_distribution.sql
 │   └── dune_query_ids.json         # 自动生成：本地文件 -> Dune 查询 id/url
+│   └── chainbase/                  # Chainbase SQL —— 历史快照看板（Tab 2）
 ├── docs/
 │   ├── dashboard_guide.md          # Dune 仪表盘搭建分步指南
 │   ├── alchemy-local-dashboard.md  # 可运行的本地（Alchemy）仪表盘说明
@@ -152,14 +169,20 @@ dune-dashboard/
 │   ├── query-catalog.md            # 查询 -> Panel -> 可视化 映射
 │   └── screenshots/                # 截图目录（.gitkeep 被跟踪）
 ├── config/
-│   └── cex_addresses.json          # 可编辑的 CEX 地址清单（本地管线用）
-├── dashboard/                      # 生成的本地仪表盘（index.html）
-│   ├── index.html
+│   ├── cex_addresses.json          # 可编辑的 CEX 地址清单（两个看板共用）
+│   └── chainbase_targets.json      # Chainbase 窗口 + DEX 路由 / 聚合器地址
+├── dashboard/                      # 生成物：Tab 入口页 + 两个看板
+│   ├── index.html                  # ← 统一入口页（Tab 切换）
+│   ├── hub.js
+│   ├── alchemy.html / alchemy.js / alchemy_data.json     # Tab 1（实时）
+│   ├── chainbase_data.json                               # Tab 2（历史快照）
 │   └── data/                       # CSV 聚合结果（已被 git 忽略）
 ├── scripts/
 │   ├── alchemy_client.py           # Alchemy RPC + Prices 客户端
-│   ├── alchemy_pipeline.py         # 抓取 -> 聚合 -> CSV -> HTML
+│   ├── alchemy_pipeline.py         # 看板 1：抓取 -> 聚合 -> alchemy_data.json
 │   ├── chainbase_client.py         # Chainbase 免费 SQL API 客户端（已验证）
+│   ├── chainbase_pipeline.py       # 看板 2：运行 queries/chainbase -> chainbase_data.json
+│   ├── build_hub.py                # 生成 dashboard/index.html（Tab 入口页）
 │   ├── create_queries.py           # 通过 API 在 Dune 上批量创建查询（需 Analyst）
 │   └── check_environment.py        # 环境 / 仓库自检
 ├── environment.yml                 # conda 环境 `dune_dashboard`（python 3.11 + 依赖）
