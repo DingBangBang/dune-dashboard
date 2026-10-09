@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exchange Market Share Tracker — Local (Alchemy)</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;margin:0;background:#0d1117;color:#e6edf3}
+ header{padding:20px 28px;background:#161b22;border-bottom:1px solid #30363d}
+ h1{margin:0 0 4px;font-size:20px}
+ .sub{color:#8b949e;font-size:13px}
+ .wrap{padding:20px 28px;max-width:1400px;margin:0 auto}
+ .kpis{display:flex;gap:14px;flex-wrap:wrap;margin:16px 0 24px}
+ .kpi{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:14px 18px;min-width:170px}
+ .kpi .v{font-size:22px;font-weight:600}
+ .kpi .l{color:#8b949e;font-size:12px;margin-top:4px}
+ .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:18px}
+ .card{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:16px}
+ .card h2{font-size:14px;margin:0 0 10px;color:#c9d1d9;font-weight:600}
+ table{width:100%;border-collapse:collapse;font-size:13px}
+ th,td{padding:7px 9px;text-align:right;border-bottom:1px solid #21262d}
+ th:first-child,td:first-child{text-align:left}
+ th{color:#8b949e;font-weight:500}
+ .pos{color:#3fb950}.neg{color:#f85149}
+ .pending{margin-top:26px;background:#1c1408;border:1px solid #4d3800;border-radius:10px;padding:16px}
+ .pending h2{color:#d29922}
+ .pending li{margin:4px 0;font-size:13px;color:#c9d1d9}
+ code{background:#21262d;padding:1px 5px;border-radius:4px;font-size:12px}
+ footer{color:#8b949e;font-size:12px;padding:20px 28px;border-top:1px solid #21262d;margin-top:30px}
+ canvas{max-height:320px}
+</style></head><body>
+<header>
+  <h1>Exchange Market Share Tracker — Local (Alchemy)</h1>
+  <div class="sub">Local dashboard built from the Alchemy Ethereum-mainnet endpoint · window: last 2 days · generated 2026-10-09 00:43 UTC</div>
+</header>
+<div class="wrap">
+  <div class="kpis" id="kpis"></div>
+  <div class="grid">
+    <div class="card"><h2>Daily net flow by exchange (USD)</h2><canvas id="cNet"></canvas></div>
+    <div class="card"><h2>Inflow vs outflow by exchange (USD)</h2><canvas id="cFlow"></canvas></div>
+    <div class="card"><h2>Net flow by asset (USD)</h2><canvas id="cAsset"></canvas></div>
+    <div class="card"><h2>Exchange summary</h2><table id="tExch"></table></div>
+  </div>
+  <div class="pending">
+    <h2>⏳ Pending platform (needs a SQL warehouse with curated DEX tables)</h2>
+    <ul id="pending"></ul>
+    <p class="sub">These panels are specified and ready in <code>queries/</code>; they cannot be computed from an RPC/transfers API alone.</p>
+  </div>
+</div>
+<footer>
+  Data: Alchemy Transfers + Prices API (Ethereum mainnet). USD = stablecoins at $1.00 · ETH/WETH at daily close.
+  Address list: <code>config/cex_addresses.json</code> (illustrative — verify before trusting). Transfers fetched: 6505.
+</footer>
+<script>const DATA = {"days": ["2026-10-07", "2026-10-08", "2026-10-09"], "daily": [{"exchange": "binance", "day": "2026-10-07", "inflow_usd": 498325664.93, "outflow_usd": 0.0, "net_flow_usd": 498325664.93, "transfers": 18}, {"exchange": "bitfinex", "day": "2026-10-07", "inflow_usd": 403165954.02, "outflow_usd": 0.0, "net_flow_usd": 403165954.02, "transfers": 196}, {"exchange": "bybit", "day": "2026-10-07", "inflow_usd": 42889148.24, "outflow_usd": 0.0, "net_flow_usd": 42889148.24, "transfers": 10}, {"exchange": "binance", "day": "2026-10-08", "inflow_usd": 503679579.75, "outflow_usd": 349692531.03, "net_flow_usd": 153987048.72, "transfers": 3904}, {"exchange": "bitfinex", "day": "2026-10-08", "inflow_usd": 195521657.57, "outflow_usd": 211932655.51, "net_flow_usd": -16410997.94, "transfers": 57}, {"exchange": "bybit", "day": "2026-10-08", "inflow_usd": 38677897.53, "outflow_usd": 23663038.73, "net_flow_usd": 15014858.8, "transfers": 1508}, {"exchange": "binance", "day": "2026-10-09", "inflow_usd": 25876950.51, "outflow_usd": 10602701.38, "net_flow_usd": 15274249.13, "transfers": 780}, {"exchange": "bybit", "day": "2026-10-09", "inflow_usd": 0.0, "outflow_usd": 346844.02, "net_flow_usd": -346844.02, "transfers": 32}], "exchanges": [{"exchange": "binance", "inflow_usd": 1027882195.19, "outflow_usd": 360295232.41, "net_flow_usd": 667586962.78, "transfers": 4702}, {"exchange": "bitfinex", "inflow_usd": 598687611.59, "outflow_usd": 211932655.51, "net_flow_usd": 386754956.08, "transfers": 253}, {"exchange": "bybit", "inflow_usd": 81567045.77, "outflow_usd": 24009882.75, "net_flow_usd": 57557163.02, "transfers": 1550}], "assets": [{"asset": "ETH", "inflow_usd": 1088283097.84, "outflow_usd": 480485127.58, "net_flow_usd": 607797970.26, "amount": 598868.5398}, {"asset": "USDT", "inflow_usd": 619847082.73, "outflow_usd": 115752643.09, "net_flow_usd": 504094439.64, "amount": 735599725.8346}, {"asset": "USDC", "inflow_usd": 6671.98, "outflow_usd": 0.0, "net_flow_usd": 6671.98, "amount": 6671.9753}], "totals": {"inflow": 1708136852.55, "outflow": 596237770.67, "net": 1111899081.88}, "n_transfers": 6505, "window_days": 2, "pending": [["01", "CEX vs DEX Daily Volume &amp; Ratio", "Needs DEX trade volume (curated dex.trades)."], ["03", "DEX Aggregator Market Share", "Needs dex_aggregator.trades (decoded aggregator routes)."], ["04", "Token CEX-Listing Impact (\u00b17d)", "Needs per-token DEX swap history."], ["05", "Unique Traders per Protocol", "Needs decoded DEX swaps keyed by tx_from."], ["07", "DEX Volume by Blockchain", "Needs multi-chain DEX trades."], ["08", "Top Token Pairs (30d)", "Needs decoded DEX swaps with token symbols."], ["09", "Stablecoin Share of DEX Volume", "Needs DEX swap volume by leg."], ["10", "Trade Size Distribution", "Needs per-swap USD size."]]};</script>
+<script src="dashboard.js"></script>
+</body></html>

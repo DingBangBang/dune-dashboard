@@ -47,15 +47,44 @@
 ## 📑 目录
 
 0. [平台状态](#-平台状态重要请先读)
-1. [项目背景（为什么做这个）](#-项目背景为什么做这个)
-2. [截图占位符](#-截图占位符)
-3. [仓库结构](#-仓库结构)
-4. [数据源说明](#-数据源说明)
-5. [核心指标定义与生产环境意义](#-核心指标定义与生产环境意义)
-6. [查询 / Panel 清单](#-查询--panel-清单)
-7. [如何复现](#-如何复现)
-8. [Dune 官方资源](#-dune-官方资源)
-9. [License](#-license)
+1. [本地仪表盘（Alchemy）——现在就能跑](#️-本地仪表盘alchemy-现在就能跑)
+2. [项目背景（为什么做这个）](#-项目背景为什么做这个)
+3. [截图占位符](#-截图占位符)
+4. [仓库结构](#-仓库结构)
+5. [数据源说明](#-数据源说明)
+6. [核心指标定义与生产环境意义](#-核心指标定义与生产环境意义)
+7. [查询 / Panel 清单](#-查询--panel-清单)
+8. [如何复现](#-如何复现)
+9. [Dune 官方资源](#-dune-官方资源)
+10. [License](#-license)
+
+---
+
+## 🖥️ 本地仪表盘（Alchemy）——现在就能跑
+
+在 SQL 层等待平台就绪的同时，本仓库提供一个**可运行的本地仪表盘**，基于你提供的
+**Alchemy** 端点：
+
+```bash
+conda run -n dune_dashboard python scripts/alchemy_pipeline.py --days 7 --max-pages 10
+open dashboard/index.html          # macOS
+```
+
+它会实时抓取真实数据（Transfers + Prices API），渲染 KPI 计数器、按交易所的每日净流柱状图、
+流入/流出对比、按资产的净流以及交易所汇总表。
+
+| ✅ 本地已实现（Alchemy） | ⏳ 待平台（需 SQL + curated DEX 表） |
+| --- | --- |
+| 02 · 交易所净流 | 01 · CEX/DEX 比值 |
+| 06 · 各交易所充提 | 03 · 聚合器市场份额 |
+| KPI 计数器、资产分解、汇总表 | 04 · 代币上市影响 |
+|  | 05 · 去重交易者 |
+|  | 07 · 各链 DEX 交易量 |
+|  | 08 · Top 交易对 |
+|  | 09 · 稳定币占比 |
+|  | 10 · 交易规模分布 |
+
+📄 细节、方法与注意事项：**[`docs/alchemy-local-dashboard.md`](docs/alchemy-local-dashboard.md)**。
 
 ---
 
@@ -115,15 +144,24 @@ dune-dashboard/
 │   ├── 10_trade_size_distribution.sql
 │   └── dune_query_ids.json         # 自动生成：本地文件 -> Dune 查询 id/url
 ├── docs/
-│   ├── dashboard_guide.md          # 仪表盘搭建分步指南
+│   ├── dashboard_guide.md          # Dune 仪表盘搭建分步指南
+│   ├── alchemy-local-dashboard.md  # 可运行的本地（Alchemy）仪表盘说明
+│   ├── platform-migration.md       # 决策记录：Dune 付费墙 / Flipside 关停
 │   ├── development-log.md          # 设计思路、取舍、性能优化
 │   ├── metrics.md                  # 指标定义 + 生产意义
 │   ├── query-catalog.md            # 查询 -> Panel -> 可视化 映射
 │   └── screenshots/                # 截图目录（.gitkeep 被跟踪）
+├── config/
+│   └── cex_addresses.json          # 可编辑的 CEX 地址清单（本地管线用）
+├── dashboard/                      # 生成的本地仪表盘（index.html）
+│   ├── index.html
+│   └── data/                       # CSV 聚合结果（已被 git 忽略）
 ├── scripts/
-│   ├── create_queries.py           # 通过 API 在 Dune 上批量创建查询
+│   ├── alchemy_client.py           # Alchemy RPC + Prices 客户端
+│   ├── alchemy_pipeline.py         # 抓取 -> 聚合 -> CSV -> HTML
+│   ├── create_queries.py           # 通过 API 在 Dune 上批量创建查询（需 Analyst）
 │   └── check_environment.py        # 环境 / 仓库自检
-├── environment.yml                 # conda 环境（python 3.11 + 依赖）
+├── environment.yml                 # conda 环境 `dune_dashboard`（python 3.11 + 依赖）
 ├── requirements.txt
 ├── .env.example                    # DUNE_API_KEY 模板
 ├── LICENSE
@@ -202,9 +240,12 @@ cd dune-dashboard
 
 ```bash
 conda env create -f environment.yml
-conda activate dune-dashboard
-conda run -n dune-dashboard python scripts/check_environment.py
+conda activate dune_dashboard
+conda run -n dune_dashboard python scripts/check_environment.py
 ```
+
+> 环境名是 **`dune_dashboard`**（下划线）——注意**文件夹**名是 `dune-dashboard`（连字符）。
+> 若环境已存在，只需装依赖：`conda run -n dune_dashboard pip install -r requirements.txt`。
 
 ### 3. 在 Dune 上创建查询
 
@@ -220,8 +261,8 @@ conda run -n dune-dashboard python scripts/check_environment.py
 
 ```bash
 cp .env.example .env      # 粘贴 DUNE_API_KEY（Dune → Settings → API）
-conda run -n dune-dashboard python scripts/create_queries.py --dry-run   # 预览
-conda run -n dune-dashboard python scripts/create_queries.py             # 创建
+conda run -n dune_dashboard python scripts/create_queries.py --dry-run   # 预览
+conda run -n dune_dashboard python scripts/create_queries.py             # 创建
 ```
 
 脚本会生成 `queries/dune_query_ids.json`（本地文件 → 查询 ID/URL 映射）。

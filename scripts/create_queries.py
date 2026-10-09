@@ -10,8 +10,8 @@ Usage
 -----
     # 1. Put your API key in .env  (copy .env.example -> .env)
     # 2. run inside the conda env
-    conda run -n dune-dashboard python scripts/create_queries.py --dry-run
-    conda run -n dune-dashboard python scripts/create_queries.py
+    conda run -n dune_dashboard python scripts/create_queries.py --dry-run
+    conda run -n dune_dashboard python scripts/create_queries.py
 
 It writes ``queries/dune_query_ids.json`` mapping each local file to the Dune
 query id + public URL, which you then add as Dashboard widgets.

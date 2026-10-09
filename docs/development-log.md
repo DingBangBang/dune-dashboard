@@ -151,6 +151,7 @@ Newest entries at the bottom under **Changelog**.
 | --- | --- |
 | 2026-10-09 | Initial scaffold: 10 DuneSQL queries, automation script, docs, git repo. Queries not yet published (pending API key / UI build). |
 | 2026-10-09 | Expanded `docs/dashboard_guide.md` for the **free-plan manual path**: no API required; added per-query creation steps, per-panel visualization config, time-filter/publish steps and a detailed screenshot-region guide. READMEs updated to lead with the manual path. |
+| 2026-10-09 | Recorded platform migration (Dune paywall; Flipside defunct; supplied credential is an Alchemy key). Added the **runnable local Alchemy pipeline** (`scripts/alchemy_client.py`, `scripts/alchemy_pipeline.py`, `config/cex_addresses.json`) that produces `dashboard/index.html` with CEX net-flow panels; other panels marked "pending platform". Git-ignored credential files. Docs: `platform-migration.md`, `alchemy-local-dashboard.md`. |
 
 > **TODO after publishing:** add a row with the public dashboard URL and the date
 > the dashboard first went live, plus a screenshot link.

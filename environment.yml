@@ -1,4 +1,4 @@
-name: dune-dashboard
+name: dune_dashboard
 channels:
   - conda-forge
 dependencies:

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Environment self-check for the dune-dashboard project.
 
-Run with:  conda run -n dune-dashboard python scripts/check_environment.py
+Run with:  conda run -n dune_dashboard python scripts/check_environment.py
 """
 from __future__ import annotations
 

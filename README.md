@@ -56,15 +56,45 @@ execution environment changed, and this README stays honest about it:
 ## 📑 Table of contents
 
 0. [Platform status](#-platform-status--read-this-first)
-1. [Why this project exists](#-why-this-project-exists)
-2. [Dashboard preview](#-screenshots)
-3. [Repository layout](#-repository-layout)
-4. [Data sources](#-data-sources)
-5. [Core metrics & why they matter in production](#-core-metrics--why-they-matter)
-6. [Panel & query catalog](#-panel--query-catalog)
-7. [Quick start (reproduce in ~15 min)](#-quick-start)
-8. [Dune resources](#-dune-resources)
-9. [License](#-license)
+1. [Local dashboard (Alchemy) — runs today](#️-local-dashboard-alchemy--runs-today)
+2. [Why this project exists](#-why-this-project-exists)
+3. [Dashboard preview](#-screenshots)
+4. [Repository layout](#-repository-layout)
+5. [Data sources](#-data-sources)
+6. [Core metrics & why they matter in production](#-core-metrics--why-they-matter)
+7. [Panel & query catalog](#-panel--query-catalog)
+8. [Quick start (reproduce in ~15 min)](#-quick-start)
+9. [Dune resources](#-dune-resources)
+10. [License](#-license)
+
+---
+
+## 🖥️ Local dashboard (Alchemy) — runs **today**
+
+While the SQL layer waits for a platform (see above), this repo ships a
+**working, runnable local dashboard** built on the supplied **Alchemy** endpoint:
+
+```bash
+conda run -n dune_dashboard python scripts/alchemy_pipeline.py --days 7 --max-pages 10
+open dashboard/index.html          # macOS
+```
+
+It renders KPI counters, a daily net-flow-by-exchange bar chart, inflow vs
+outflow, net flow by asset, and an exchange summary table from **Ethereum-mainnet
+CEX flows**. It fetches real data live (Transfers + Prices API).
+
+| ✅ Implemented locally (Alchemy) | ⏳ Pending platform (needs SQL + curated DEX tables) |
+| --- | --- |
+| 02 · exchange net flow | 01 · CEX/DEX ratio |
+| 06 · CEX inflow/outflow by exchange | 03 · aggregator market share |
+| KPI counters, asset breakdown, summary table | 04 · token listing impact |
+|  | 05 · unique traders |
+|  | 07 · DEX volume by chain |
+|  | 08 · top token pairs |
+|  | 09 · stablecoin share |
+|  | 10 · trade size distribution |
+
+📄 Details, method and caveats: **[`docs/alchemy-local-dashboard.md`](docs/alchemy-local-dashboard.md)**.
 
 ---
 
@@ -127,15 +157,24 @@ dune-dashboard/
 │   ├── 10_trade_size_distribution.sql
 │   └── dune_query_ids.json         # generated: local file -> Dune query id/url
 ├── docs/
-│   ├── dashboard_guide.md          # step-by-step Dashboard build guide
+│   ├── dashboard_guide.md          # step-by-step Dune Dashboard build guide
+│   ├── alchemy-local-dashboard.md  # the runnable local (Alchemy) dashboard
+│   ├── platform-migration.md       # ADR: Dune paywall / Flipside defunct
 │   ├── development-log.md          # design rationale, trade-offs, perf notes
 │   ├── metrics.md                  # metric definitions + production meaning
 │   ├── query-catalog.md            # query -> panel -> visualization mapping
 │   └── screenshots/                # dashboard screenshots (.gitkeep tracked)
+├── config/
+│   └── cex_addresses.json          # editable CEX address list (local pipeline)
+├── dashboard/                      # generated local dashboard (index.html)
+│   ├── index.html
+│   └── data/                       # CSV aggregates (git-ignored)
 ├── scripts/
-│   ├── create_queries.py           # create all queries on Dune via API
+│   ├── alchemy_client.py           # Alchemy RPC + Prices client
+│   ├── alchemy_pipeline.py         # fetch -> aggregate -> CSV -> HTML
+│   ├── create_queries.py           # create all queries on Dune via API (Analyst)
 │   └── check_environment.py        # env / repo self-check
-├── environment.yml                 # conda env (python 3.11 + deps)
+├── environment.yml                 # conda env `dune_dashboard` (python 3.11 + deps)
 ├── requirements.txt
 ├── .env.example                    # DUNE_API_KEY template
 ├── LICENSE
@@ -214,9 +253,13 @@ cd dune-dashboard
 
 ```bash
 conda env create -f environment.yml
-conda activate dune-dashboard
-conda run -n dune-dashboard python scripts/check_environment.py
+conda activate dune_dashboard
+conda run -n dune_dashboard python scripts/check_environment.py
 ```
+
+> The env is named **`dune_dashboard`** (underscore) — note the *folder* is
+> `dune-dashboard` (hyphen). If you already have the env, just install deps:
+> `conda run -n dune_dashboard pip install -r requirements.txt`.
 
 ### 3. Create the queries on Dune
 
@@ -234,8 +277,8 @@ and run the script:
 
 ```bash
 cp .env.example .env      # then paste your DUNE_API_KEY (Dune → Settings → API)
-conda run -n dune-dashboard python scripts/create_queries.py --dry-run   # preview
-conda run -n dune-dashboard python scripts/create_queries.py             # create
+conda run -n dune_dashboard python scripts/create_queries.py --dry-run   # preview
+conda run -n dune_dashboard python scripts/create_queries.py             # create
 ```
 
 This writes `queries/dune_query_ids.json` with the query IDs/URLs.

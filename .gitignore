@@ -20,6 +20,9 @@ etherum_endpoint_url.txt
 *.pem
 *.key
 
+# --- Local tooling / agent worktrees ---
+.kilo/
+
 # --- Jupyter ---
 .ipynb_checkpoints/
 
