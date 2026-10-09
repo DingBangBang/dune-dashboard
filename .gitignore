@@ -13,6 +13,13 @@ env/
 # --- Secrets ---
 .env
 
+# --- Credential files (NEVER commit) ---
+*.txt
+flipside_cypto_API_ley.txt
+etherum_endpoint_url.txt
+*.pem
+*.key
+
 # --- Jupyter ---
 .ipynb_checkpoints/
 

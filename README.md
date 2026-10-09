@@ -19,8 +19,43 @@
 
 ---
 
+## ⚠️ Platform status — read this first
+
+This project was **designed for Dune Analytics**, and that design is kept fully
+intact (`queries/` + `docs/dashboard_guide.md`). It is **not abandoned**. But the
+execution environment changed, and this README stays honest about it:
+
+1. **Dune — design kept, execution blocked on the free plan.** Dune moved query
+   **creation and execution** behind its **paid plans** (Sept 2025), so the free
+   UI/API path no longer works for this account.
+2. **Flipside Crypto — not viable: the platform is shut down.** `flipsidecrypto.xyz`,
+   `docs.flipsidecrypto.xyz` and `api.flipsidecrypto.xyz` **all 301-redirect to an
+   unrelated company** (`edisyl.com`), and `api-v2.flipsidecrypto.xyz` is
+   unreachable. There is no Flipside SQL/API left to build on.
+3. **The supplied credential is an Alchemy key**, not a Flipside key
+   (`alch_…` + an Alchemy Ethereum-mainnet RPC URL). The Alchemy endpoint **works**
+   (verified: `eth_blockNumber`, `alchemy_getAssetTransfers`), but Alchemy is a
+   node/indexing provider — it has **no SQL engine** and no curated
+   `dex.trades` / `dex_aggregator.trades` / `cex.flows` tables.
+
+**Consequence for this repo:**
+
+* ✅ The **full SQL + 20+ panel catalogue is complete and platform-agnostic.**
+* ✅ The **Alchemy RPC endpoint is usable** for a subset (CEX net flow,
+  address-level flows, token prices).
+* ⚠️ Reproducing **all** panels needs a **free SQL-on-chain API** (e.g. Chainbase
+  Data Cloud, Space & Time) or a **paid Dune** plan.
+
+📄 **Full evidence, commands and options: [`docs/platform-migration.md`](docs/platform-migration.md).**
+
+> 🔐 The credential files (`flipside_cypto_API_ley.txt`, `etherum_endpoint_url.txt`)
+> are **git-ignored** and must never be committed.
+
+---
+
 ## 📑 Table of contents
 
+0. [Platform status](#-platform-status--read-this-first)
 1. [Why this project exists](#-why-this-project-exists)
 2. [Dashboard preview](#-screenshots)
 3. [Repository layout](#-repository-layout)

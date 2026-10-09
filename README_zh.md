@@ -15,8 +15,38 @@
 
 ---
 
+## ⚠️ 平台状态（重要，请先读）
+
+本项目**原本为 Dune Analytics 设计**，该设计**完整保留**（`queries/` +
+`docs/dashboard_guide.md`），**并未放弃**。但运行环境发生了变化，README 如实记录：
+
+1. **Dune——设计保留，免费版无法执行。** Dune 于 2025 年 9 月将查询的
+   **创建与执行**改为**付费计划**才可用，因此本账号走免费 UI/API 路径已不可行。
+2. **Flipside Crypto——不可行：平台已关停。** `flipsidecrypto.xyz`、
+   `docs.flipsidecrypto.xyz`、`api.flipsidecrypto.xyz` **全部 301 跳转到一家无关公司**
+   （`edisyl.com`），`api-v2.flipsidecrypto.xyz` 无法连通。已无 Flipside SQL/API 可用。
+3. **提供的凭据其实是 Alchemy 的 key**，而非 Flipside（`alch_…` + Alchemy 以太坊主网 RPC）。
+   该 Alchemy 端点**可用**（已验证 `eth_blockNumber`、`alchemy_getAssetTransfers`），
+   但 Alchemy 是节点/索引服务，**没有 SQL 引擎**，也没有 curated 的
+   `dex.trades` / `dex_aggregator.trades` / `cex.flows` 表。
+
+**对本仓库的影响：**
+
+* ✅ **完整的 SQL + 20+ Panel 清单已就绪，与平台无关。**
+* ✅ **Alchemy RPC 端点可用**，可支撑部分分析（CEX 净流、地址级流水、代币价格）。
+* ⚠️ 要复现**全部** Panel，需要一个**免费的链上 SQL API**（如 Chainbase Data Cloud、
+  Space & Time），或**付费的 Dune** 计划。
+
+📄 **完整证据、命令与方案：[`docs/platform-migration.md`](docs/platform-migration.md)。**
+
+> 🔐 凭据文件（`flipside_cypto_API_ley.txt`、`etherum_endpoint_url.txt`）已被
+> **git 忽略**，切勿提交。
+
+---
+
 ## 📑 目录
 
+0. [平台状态](#-平台状态重要请先读)
 1. [项目背景（为什么做这个）](#-项目背景为什么做这个)
 2. [截图占位符](#-截图占位符)
 3. [仓库结构](#-仓库结构)
