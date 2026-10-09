@@ -159,6 +159,7 @@ dune-dashboard/
 ├── scripts/
 │   ├── alchemy_client.py           # Alchemy RPC + Prices 客户端
 │   ├── alchemy_pipeline.py         # 抓取 -> 聚合 -> CSV -> HTML
+│   ├── chainbase_client.py         # Chainbase 免费 SQL API 客户端（已验证）
 │   ├── create_queries.py           # 通过 API 在 Dune 上批量创建查询（需 Analyst）
 │   └── check_environment.py        # 环境 / 仓库自检
 ├── environment.yml                 # conda 环境 `dune_dashboard`（python 3.11 + 依赖）

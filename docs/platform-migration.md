@@ -111,8 +111,108 @@ dashboard. Remove them from the working tree before any `git add -A`.
 
 ---
 
-## 6. Changelog
+## 7. Chainbase addendum (2026-10-09)
+
+A `chainbase_API_key.txt` appeared in the project folder, so this platform was
+also evaluated.
+
+### 7.1 The key is valid
+
+```
+GET https://api.chainbase.online/v1/account/balance?chain_id=1&address=0x28c6…1d60
+    -H "x-api-key: ***"
+-> {"code":0,"message":"ok","data":"0x8ae3fd62efa9c959144"}      # live
+```
+
+### 7.2 There IS a raw-SQL API (unlike Dune's paywall)
+
+Per the official OpenAPI spec (`/api-reference/sql-api/execute-queries`):
+
+```
+POST https://api.chainbase.com/api/v1/query/execute
+Headers: X-API-KEY: <key> , Content-Type: application/json
+Body:    {"sql": "SELECT * FROM ethereum.blocks LIMIT 10"}
+Limit:   100,000 rows
+```
+
+This accepts **arbitrary SQL** — no saved-query ID required. That makes Chainbase
+the first platform in this project that can be driven end-to-end from a script.
+
+### 7.3 But: severe free-tier rate limiting
+
+Every call during testing returned:
+
+```
+{"code":429,"message":"Too many requests. … refer to https://chainbase.com/pricing"}
+```
+
+including a trivial `SELECT 1`. The free tier appears to allow only a handful of
+requests per unit time, which makes a 10-query dashboard refresh impractical
+without waiting between every call (the scripts would need long back-off).
+
+### 7.4 Verified end-to-end flow
+
+The task API is asynchronous and works (verified with real calls):
+
+```
+POST /api/v1/query/execute            {"sql": "SELECT 1 AS x"}
+  -> {"code":200,"data":[{"executionId":"e3a1…","status":"PENDING","queueLength":"0"}]}
+GET  /api/v1/execution/{id}/status    -> status FINISHED
+GET  /api/v1/execution/{id}/results   -> {"columns":[{"name":"x","type":"TINYINT"}],
+                                          "data":[[1]], "total_row_count":1}
+```
+
+Implemented in [`scripts/chainbase_client.py`](../scripts/chainbase_client.py).
+
+### 7.5 Catalog reality (the blocker)
+
+`information_schema.tables` shows 500+ schemas, almost entirely **raw** tables per
+chain: `blocks`, `transactions`, `transaction_logs`, `token_transfers`,
+`trace_calls`, `contracts`, `token_metas`, plus aggregates
+(`token_transfer_agg_1h`, `transfer_1day`).
+
+There is **one** curated-looking table, `ethereum.onchain_trades`, with exactly
+the columns a DEX analysis wants:
+
+```
+block_timestamp, transaction_hash, token_address, from_address, to_address,
+value, operation, amount, usd_value, symbol, name, ust_value_timestamp
+```
+
+…**but it is stale**: the newest row observed was `2025-04-24`, and a
+`WHERE block_timestamp >= current_date - interval '2' day` filter returned **0
+rows**. So the one convenient shortcut is not maintained on the free tier.
+
+Fresh data therefore lives in the **raw** tables, from which DEX swaps would have
+to be decoded by hand (join `transaction_logs`/`token_transfers` to known router
+& pool addresses). That is a re-implementation of the indexer, not a port.
+
+### 7.6 Rate limits (measured)
+
+Free tier returns HTTP 429 aggressively — a burst of calls produced several
+consecutive 429s, each requiring a ~20 s back-off before success. A 10-query
+dashboard with polling would take many minutes and is fragile.
+
+### 7.7 Verdict (updated)
+
+Chainbase is the **only** platform tested here that exposes a working **raw-SQL
+API on a free tier**, and it is fully scriptable (`chainbase_client.py`). Its
+shortcomings are concrete:
+
+1. **No fresh curated DEX/aggregator tables** — `onchain_trades` is stale (Apr
+   2025); everything else is raw logs.
+2. **Aggressive free-tier rate limiting** (~1 call per ~20–30 s under load).
+3. Remaining panels would need raw-log SQL decoding → a large, error-prone build.
+
+So Chainbase can host a **SQL-based CEX flow** and small raw-log analyses, but
+cannot cheaply reproduce the full DEX-centric catalogue.
+
+
+
+
+## 8. Changelog
 
 | Date | Change |
 | --- | --- |
 | 2026-10-09 | Recorded: Dune paywalled for query create/execute; Flipside defunct (domains → edisyl.com); supplied credential is an Alchemy key (Ethereum RPC works, no SQL). Git-ignored credential files. |
+| 2026-10-09 | Evaluated Chainbase (key valid; raw-SQL API at `POST /api/v1/query/execute`) — see §7. Free tier returned HTTP 429 on every call during testing. |

@@ -172,6 +172,7 @@ dune-dashboard/
 ├── scripts/
 │   ├── alchemy_client.py           # Alchemy RPC + Prices client
 │   ├── alchemy_pipeline.py         # fetch -> aggregate -> CSV -> HTML
+│   ├── chainbase_client.py         # Chainbase free SQL API client (verified)
 │   ├── create_queries.py           # create all queries on Dune via API (Analyst)
 │   └── check_environment.py        # env / repo self-check
 ├── environment.yml                 # conda env `dune_dashboard` (python 3.11 + deps)

@@ -18,6 +18,7 @@ env/
 !requirements.txt
 flipside_cypto_API_ley.txt
 etherum_endpoint_url.txt
+chainbase_API_key.txt
 *.pem
 *.key
 
